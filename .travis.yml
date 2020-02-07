@@ -11,6 +11,7 @@ install:
   - mv hugo ~/bin/
 
 script:
+  - npm install postcss-cli
   - hugo --gc --minify
 
 deploy:
