@@ -1,18 +1,21 @@
+dist: xenial
+sudo: required
 git:
   depth: false
-  
+language: node_js # npm is needed to install postcss-cli
+node_js: "lts/*"
 env:
-  matrix:
-    - YOUR_ENCRYPTED_VARIABLE
+  global:
+    - HUGO_RELEASE=0.64.0
 
 install:
-  - wget -q https://github.com/gohugoio/hugo/releases/download/v0.64.0/hugo_0.64.0_Linux-64bit.tar.gz
-  - tar xf hugo_0.64.0_Linux-64bit.tar.gz
-  - mv hugo ~/bin/
+  - npm install postcss-cli autoprefixer
+  - wget -q -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_RELEASE}/hugo_extended_${HUGO_RELEASE}_Linux-64bit.deb
+  - sudo dpkg -i hugo.deb
 
 script:
-  - npm install postcss-cli
-  - hugo --gc --minify
+  - hugo --environment development
+  - hugo --environment production
 
 deploy:
   provider: pages
