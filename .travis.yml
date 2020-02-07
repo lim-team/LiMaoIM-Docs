@@ -18,7 +18,7 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $TOKEN
+  github-token: $token
   keep-history: true
   local-dir: public
   repo: lim-team/lim-team.github.io
