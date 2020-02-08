@@ -11,43 +11,51 @@ weight: 1040
 当收到或者一条消息时，会自动生成这个消息对应的最近会话。但值得注意的是最近会话和会话并不是一一对应的关系，删除最近会话并不会影响会话
 {{% /pageinfo %}}
 
-最近会话在LiMaoIMSDK中用LIMConversation类表示,下面展示最近会话的一些关键字段
+
+
+```Objective-C
+// 添加委托
+[[LIMSDK shared].conversationManager addDelegate:self];
+```
+
+最近会话的委托协议 LIMConversationManagerDelegate 
 
 ```Objective-C
 
-@interface LIMConversation : NSObject
 ...
-/**
- 最近会话对应的频道，一个最近会话一定对应一个频道。
- */
-@property(nonatomic,strong) LIMChannel *channel;
-/**
- 最近会话的标题（个人频道则为用户昵称，群频道为群名字）
- */
-@property(nonatomic,copy) NSString *title;
-/**
- 最近会话显示的头像（个人频道则为用户头像，群频道为群头像）
- */
-@property(nonatomic,copy) NSString *avatar;
 
 /**
- 最后一条消息
+  当最近会话被新增的时候会调用此方法
+
+ @param conversation 最近会话对象
+ @param left 会话剩余数量 UI层可以判断left == 0 的时候才刷新 避免频繁刷新UI导致卡顿
  */
-@property(nonatomic,strong) LIMMessage *lastMessage;
+- (void)onConversationAdd:(LIMConversation*)conversation left:(NSInteger)left;
 
 
 /**
- 未读消息数量
+ 当最近会话对象更新的时候会调用此方法
+
+ @param conversation 最近会话对象
+ @param left 会话剩余数量 UI层可以判断left == 0 的时候才刷新 避免频繁刷新UI导致卡顿
  */
-@property(nonatomic,assign) NSInteger unreadCount;
+- (void)onConversationUpdate:(LIMConversation*)conversation left:(NSInteger)left;
 
 /**
- 扩展数据（仅本地有效） 
+ 最近会话未读数发送改变
+ 
+ @param channel 频道
+ @param unreadCount 未读数量
  */
-@property(nonatomic,strong) NSDictionary *extra;
+- (void)onConversationUnreadCountUpdate:(LIMChannel*)channel unreadCount:(NSInteger)unreadCount;
 
 ...
 
-@end
+```
+
+查询所有最近会话数据
+
+```Objective-C
+NSArray<LIMConversation*> *conversations =[[LIMSDK shared].conversationManager getConversationList];
 
 ```
