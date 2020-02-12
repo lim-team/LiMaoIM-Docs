@@ -1,1 +1,31 @@
-<mxfile host="www.draw.io" modified="2020-02-12T14:08:47.362Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" etag="BALheQhL1sr5TLb7hXXX" version="12.6.7" type="github"><diagram id="CxdAZQeiMGpa4aOwBcfx" name="Page-1">3ZZdb5swFIZ/DZeLbExMchvSrNsSrRpqc22BAasGI+MU0l8/E8yXoO0mdV0VLpD9nnP88bwG2UJeWn2VJE8OIqTcskFYWWhr2fYKYv2uhXMjYLBqhFiysJFgL/jsmRoRGPXEQlqMEpUQXLF8LAYiy2igRhqRUpTjtEjw8aw5ielE8APCp+qRhSox27LdXr+lLE7amSFeN5GUtMlmJ0VCQlEOJHRjIU8KoZpWWnmU1+xaLk3d7oVotzBJM/UnBfzhcNrf7tRPuPPB9+PT3X2efDFmPBF+MhveswMRG1JQs2p1blFIccpCWo8GLLQpE6aon5Ogjpbae60lKuW6B3UzYpx7ggt5qUUELG1bl24KJcUjHUTwFu5APWAkMjXQo8ujdbNCKhWtXtw67IDqg0hFSpU86xRT0J2mc9t3mn7ZW7oEJicZ2ImNRswpiruhe9C6YVj/Bff1PPdvB3/7413BY8fFK3cOPIIOWjofCx464D+Dx/Pg9yJm2QT8G6hJkTe/nIhVtT0T9oCs4Sx7e+viVw9997MA/+gLWE+NgHDGiE58dyeW8054mggJVHHFZiDn05kB4cSNxWJxxR5g8Pk8QPNfxC8aauKPVF2xHY77gXbobn/tusQGd1d08xs=</diagram></mxfile>
+<mxfile host="www.draw.io" modified="2020-02-12T14:24:11.280Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" etag="IJmr0Bspeaj4PJfE6Rkq" version="12.6.7" type="github">
+  <diagram id="CxdAZQeiMGpa4aOwBcfx" name="Page-1">
+    <mxGraphModel dx="1426" dy="946" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-8" value="LiMaoBase" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#a0522d;strokeColor=#6D1F00;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="339" y="215" width="370" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-9" value="LiMaoIMSDK" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="210" y="140" width="500" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-6" value="LiMaoLogin" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="210" y="290" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-5" value="LiMaoContacts" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="340" y="290" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-11" value="..." style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="600" y="290" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-13" value="LiMaoRedpacket" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="469" y="290" width="110" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="rfPXmKBsutUwfn4dncJG-2" value="LiMaoDataSource" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="210" y="215" width="130" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
