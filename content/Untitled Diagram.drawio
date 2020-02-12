@@ -1,4 +1,4 @@
-<mxfile host="www.draw.io" modified="2020-02-12T14:41:05.884Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" etag="n0mZEXFMaBC9BqDNmUvB" version="12.6.7" type="github">
+<mxfile host="www.draw.io" modified="2020-02-12T14:44:03.124Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36" etag="BMGN570mQHScG_CC_QCv" version="12.6.7" type="github">
   <diagram id="CxdAZQeiMGpa4aOwBcfx" name="Page-1">
     <mxGraphModel dx="1426" dy="897" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -23,19 +23,19 @@
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
         <mxCell id="rfPXmKBsutUwfn4dncJG-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="210" y="450" width="560" height="140" as="geometry"/>
+          <mxGeometry x="210" y="440" width="560" height="140" as="geometry"/>
         </mxCell>
-        <mxCell id="lVMuLHFtO1FS0JWvPUph-6" value="LiMaoLogin" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="245" y="465" width="110" height="110" as="geometry"/>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-6" value="LiMaoLogin&lt;br&gt;(登录模块)" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="243" y="455" width="110" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="lVMuLHFtO1FS0JWvPUph-5" value="LiMaoContacts" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="375" y="465" width="110" height="110" as="geometry"/>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-5" value="LiMaoContacts&lt;br&gt;(联系人模块)" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="374" y="455" width="110" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="lVMuLHFtO1FS0JWvPUph-11" value="LiMaoDataSource" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="635" y="465" width="110" height="110" as="geometry"/>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-11" value="LiMaoDataSource&lt;br&gt;(LiMaoSDK的数据源)" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#008a00;strokeColor=#005700;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="503" y="455" width="110" height="110" as="geometry"/>
         </mxCell>
-        <mxCell id="lVMuLHFtO1FS0JWvPUph-13" value="LiMaoRedpacket" style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
-          <mxGeometry x="504" y="465" width="110" height="110" as="geometry"/>
+        <mxCell id="lVMuLHFtO1FS0JWvPUph-13" value="..." style="whiteSpace=wrap;html=1;aspect=fixed;fillColor=#60a917;strokeColor=#2D7600;fontColor=#ffffff;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="630" y="455" width="110" height="110" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
