@@ -54,7 +54,7 @@ id = "UA-00000000-0"
 [languages]
 [languages.zh]
 title = "狸猫IM"
-description = "A Docsy example site"
+description = "狸猫IM文档"
 languageName ="中文"
 # Weight used for sorting.
 weight = 1
@@ -67,7 +67,7 @@ weight = 1
 # Everything below this are Site Params
 
 [params]
-copyright = "The Docsy Authors"
+copyright = "狸猫IM"
 privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
