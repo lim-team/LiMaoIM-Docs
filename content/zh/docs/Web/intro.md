@@ -1,7 +1,7 @@
 ---
 title: "概要"
 linkTitle: "概要"
-date: 2017-01-05
+date: 2020-03-25
 weight: 999
 ---
 
@@ -14,6 +14,8 @@ weight: 999
 第三步：连接/断开IM
 
 第四步：收/发消息
+
+参考 [Demo](https://github.com/lim-team/LiMaoIMWebDemo)
 
 ## lim对象
 
