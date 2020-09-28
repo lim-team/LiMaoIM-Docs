@@ -43,5 +43,30 @@ LiMaoIm.getInstance().getLiMChannelManager().updateChannelTop(channelID,channelT
 LiMaoIm.getInstance().getLiMChannelManager().updateChannelMute(channelID,channelType, isMute);
 ```
 
+## 频道信息改变监听
+```java
+LiMaoIm.getInstance().getLiMChannelManager().addOnRefreshChannelInfo(liMChannel ->{
+    //回调是在主线程，刷新UI等。
+    .....
+});
+```
+## 频道成员信息改变监听
+```java
+LiMaoIm.getInstance().getLiMChannelMemberManager().addOnRefreshChannelMemberInfo(liMChannelMember -> {
+    //todo
+});
+```
+## 移除频道成员监听
+```java
+LiMaoIm.getInstance().getLiMChannelMemberManager().addOnRemoveChannelMemberListener(list -> {
+    //这里可用于监听群成员被移除等
+});
+```
+## 添加频道成员监听
+```java
+LiMaoIm.getInstance().getLiMChannelMemberManager().addOnAddChannelMemberListener(list -> {
+    //这里可用于监听添加群成员等
+});
+```
 更多频道设置请查看demo中 com.limao.im.limkit.group.GroupDetailActivity 文件
 

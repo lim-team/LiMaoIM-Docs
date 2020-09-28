@@ -9,6 +9,7 @@ weight: 2010
 1、继承 LiMMessageContent 和定义字段
 ```java
 public class LiMCardContent extends LiMMessageContent {
+    //注意无参构造方法必须写
     public LiMCardContent() {
         //指定消息类型
         type = ContentType.card;
@@ -51,5 +52,7 @@ public LiMMessageContent decodeMsg(JSONObject jsonObject) {
 ```java
 LiMaoIm.getInstance().getMessageManager().registerContentMsg(LiMCardContent.class);
 ```
+
+注意：如果定义的消息对象需要进行intent页面传递参数需实现Parcelable的方法
 
 至此自定义消息已完成。详见demo中 com.limao.im.limkit.chat.msgmodel.LiMCardContent 的具体实现

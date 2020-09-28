@@ -12,7 +12,6 @@ weight: 1033
 * @param liMBaseContentMsgModel 消息model
 * @param channelID              投递频道ID
 * @param channelType            投递频道类型
-* @param callBack               发送回调
 */
-LiMaoIm.getInstance().getLiMConnectionManager().sendMessage(context, liMBaseContentMsgModel, channelID, channelType, callBack);
+LiMaoIm.getInstance().getLiMConnectionManager().sendMessage(liMBaseContentMsgModel, channelID, channelType);
 ```

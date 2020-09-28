@@ -12,7 +12,7 @@ LiMaoIm SDK中会判断本地是否有频道资料。如果sdk中没有频道资
     LiMaoIm.getInstance().getLiMEventManager().addGetChannelInfoListener((channelId, channelType, iChannelInfoListenter) -> {
     if (channelType == LiMChannelType.PERSONAL) {
         //获取个人信息
-        .....
+       .....
     } else {
         //如果上层没有该频道信息则通过接口获取
         GroupModel.getInstance().getGroupInfo(channelId, (code, msg, groupEntity) -> {
@@ -25,6 +25,10 @@ LiMaoIm SDK中会判断本地是否有频道资料。如果sdk中没有频道资
                 liMChannel.top = groupEntity.top;//是否置顶
                 liMChannel.save = groupEntity.save;//是否保存在通讯录
                 liMChannel.show_nick = groupEntity.show_nick;//是否显示频道成员名称
+                //sdk没有的字段可存在扩展字段中
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put("notice", groupEntity.notice);
+                liMChannel.extraMap = hashMap;
                 iChannelInfoListenter.onResult(liMChannel);
             }
         });

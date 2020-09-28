@@ -13,7 +13,7 @@ LiMaoIm.getInstance().getLiMConnectionManager().disconnect(isLogout);
 ```
 连接状态监听
 ```java
-LiMaoIm.getInstance().getLiMEventManager().addConnectionStatusListener(code -> {
+LiMaoIm.getInstance().getLiMConnectionManager().addConnectionStatusListener(code -> {
         if (code == LiMConnectStatus.kicked) {
             //被踢,在其他设备登录
         }else if(code == LiMConnectStatus.success){
