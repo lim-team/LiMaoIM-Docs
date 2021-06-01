@@ -10,7 +10,7 @@ weight: 1010
 // 构建正文
  LiMImageContent imgMsgModel = new LiMImageContent(localPath);
  // 发送
- LiMaoIm.getInstance().getLiMConnectionManager().sendMessage(imgMsgModel, channelID, LiMChannelType.PERSONAL);
+ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(imgMsgModel, channelID, LiMChannelType.PERSONAL);
 
 ```
 

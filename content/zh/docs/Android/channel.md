@@ -4,9 +4,9 @@ linkTitle: "频道管理"
 date: 2020-02-06
 weight: 1060
 ---
-## 获取指定频道信息
+**获取指定频道信息**
 ```java
-LiMaoIm.getInstance().getLiMChannelManager().getLiMChannel(channelID, channelType);
+LiMaoIM.getInstance().getLiMChannelManager().getLiMChannel(channelId, channelType);
 ```
 
 参数说明:
@@ -16,17 +16,17 @@ LiMaoIm.getInstance().getLiMChannelManager().getLiMChannel(channelID, channelTyp
 channelID | String | 频道ID
 channelType | byte | 频道类型
 
-## 添加或修改频道
+**添加或修改频道**
 ```java
 //单个操作
-LiMaoIm.getInstance().getLiMChannelManager().addOrUpdateChannel(LiMChannel liMChannel);
+LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannel(LiMChannel liMChannel);
 //批量操作
-LiMaoIm.getInstance().getLiMChannelManager().addOrUpdateChannels(List<LiMChannel> list);
+LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannels(List<LiMChannel> list);
 ```
 
-## 获取指定频道的成员列表 
+**获取指定频道的成员列表**
 ```java
-List<LiMChannelMember> list = LiMaoIm.getInstance().getLiMChannelMemberManager().getLiMChannelMembers(channelID,channelType);
+LiMaoIM.getInstance().getLiMChannelMembersManager().getLiMChannelMembers(channelID, channelType);
 ```
 
 参数 | 类型 | 说明
@@ -34,39 +34,44 @@ List<LiMChannelMember> list = LiMaoIm.getInstance().getLiMChannelMemberManager()
 channelID | String | 频道ID
 channelType | byte | 频道类型
 
-## 设置频道置顶
+**设置频道置顶**
 ```java
-LiMaoIm.getInstance().getLiMChannelManager().updateChannelTop(channelID,channelType, isTop);
+LiMaoIM.getInstance().getLiMChannelManager().updateTop(channelID,channelType, isTop);
 ```
-## 设置频道免打扰
+**设置频道免打扰**
 ```java
-LiMaoIm.getInstance().getLiMChannelManager().updateChannelMute(channelID,channelType, isMute);
+LiMaoIM.getInstance().getLiMChannelManager().updateMute(channelID,channelType, isMute);
 ```
-
-## 频道信息改变监听
+**修改频道扩展信息**
 ```java
-LiMaoIm.getInstance().getLiMChannelManager().addOnRefreshChannelInfo(liMChannel ->{
-    //回调是在主线程，刷新UI等。
-    .....
-});
+LiMaoIM.getInstance().getLiMChannelManager().updateExtra(channelID,channelType, HashMap)
 ```
-## 频道成员信息改变监听
+**频道信息改变监听**
 ```java
-LiMaoIm.getInstance().getLiMChannelMemberManager().addOnRefreshChannelMemberInfo(liMChannelMember -> {
+LiMaoIM.getInstance().getLiMChannelManager().addOnRefreshChannelInfo("listener_key", new IRefreshChannel() {
+            @Override
+            public void onRefreshChannel(LiMChannel liMChannel) {
+                // 回掉是在主线程
+            }
+        });
+```
+**频道成员信息改变监听**
+```java
+LiMaoIM.getInstance().getLiMChannelMembersManager().addOnRefreshChannelMemberInfo("listener_key",liMChannelMember -> {
     //todo
 });
 ```
-## 移除频道成员监听
+**移除频道成员监听**
 ```java
-LiMaoIm.getInstance().getLiMChannelMemberManager().addOnRemoveChannelMemberListener(list -> {
+LiMaoIM.getInstance().getLiMChannelMembersManager().addOnRemoveChannelMemberListener("listener_key",list -> {
     //这里可用于监听群成员被移除等
 });
 ```
-## 添加频道成员监听
+**添加频道成员监听**
 ```java
-LiMaoIm.getInstance().getLiMChannelMemberManager().addOnAddChannelMemberListener(list -> {
+LiMaoIM.getInstance().getLiMChannelMembersManager().addOnAddChannelMemberListener("listener_key",list -> {
     //这里可用于监听添加群成员等
 });
 ```
-更多频道设置请查看demo中 com.limao.im.limkit.group.GroupDetailActivity 文件
+每个监听对于都有取消监听方法，退出页面后可取消对于的监听。
 

@@ -13,12 +13,12 @@ weight: 1040
 
 ### 查询最近会话
 ```java
-LiMaoIm.getInstance().getLiMConversationManager().queryConverMsgList();
+LiMaoIM.getInstance().getLiMConversationManager().queryMsgList();
 ```
 
 ### 标记某个最近会话为已读/未读
 ```java
-LiMaoIm.getInstance().getLiMConversationManager().updateConverMsgRedDotCount(channelID,channelType,unreadCount);
+LiMaoIM.getInstance().getLiMConversationManager().updateMsgRedDotCount(channelID, channelType, unreadCount);
 ```
 参数说明:
 
@@ -31,7 +31,7 @@ unreadCount | int | 未读消息数量
 
 ### 删除某个最近会话
 ```java
-LiMaoIm.getInstance().getLiMConversationManager().deleteConverMsg(channelID,channelType)
+LiMaoIM.getInstance().getLiMConversationManager().deleteMsg(channelID, channelType);
 ```
 参数说明:
 
@@ -42,5 +42,5 @@ channelType | byte | 频道类型
 
 ### 清空最近会话
 ```java
-LiMaoIm.getInstance().getLiMConversationManager().clearAll();
+LiMaoIM.getInstance().getLiMConversationManager().clearAll();
 ```

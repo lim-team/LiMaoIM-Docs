@@ -5,28 +5,34 @@ date: 2020-02-06
 weight: 1070
 ---
 
-如果没有设置离线消息监听，狸猫sdk只会收取在线消息。离线消息监听如下：
+如果没有设置离线消息监听，狸猫sdk只会收取在线消息。
+
+**同步最近会话**
 ```java
-LiMaoIm.getInstance().getMessageManager().addSyncOfflineMsgListener(new ISyncOfflineMsgListener() {
-    @Override
-    public void getOfflineMsgs(int max_message_seq, ISyncOfflineMsgBack iSyncOfflineMsgBack) {
-        //获取离线
-        MsgModel.getInstance().syncMsg((max_message_seq,500 ),list->{
-            if (list != null && list.size() > 0) {
-                List<LiMSyncMsg> liMMsgList = new ArrayList<>();
-                for (int i = 0, size = list.size(); i < size; i++) {
-                    liMMsgList.add(getLiMSyncMsg(list.get(i)));
-                }
-                iSyncOfflineMsgBack.onBack(false,liMMsgList);
-            } else {
-                iSyncOfflineMsgBack.onBack(true,null);
-                //需将消息中的最大last_message_seq传递给服务器
-                // ... 
-                ackMsg(last_message_seq);
+LiMaoIM.getInstance().getLiMMsgManager().addOnSyncConversationListener(new ISyncConversationChat() {
+            @Override
+            public void syncConversationChat(String last_msg_seqs, int msg_count, long version,  ISyncConversationChatBack iSyncConversationChatBack) {
+                // last_msg_seqs     最近会话列表msg_seq集合
+                // msg_count         会话里面消息同步数量
+                // version           最大版本号
             }
         });
-    }
-});
 ```
 
-详细操作请查看demo中com.limao.im.limkit.message.MsgModel文件
+
+在离线消息很多的时候，同步最近会话只会同步一部分消息下来。这时点击某个会话消息时下拉查看更多可能存在本地没消息，而服务器存在消息。这时需监听以下方法。
+
+**同步频道消息**
+```java
+LiMaoIM.getInstance().getLiMMsgManager().addOnSyncChannelMsgListener(new ISyncChannelMsgListener() {
+            @Override
+            public void syncChannelMsgs(String channelID, byte channelType, long minMessageSeq, long maxMesageSeq, int limit, boolean reverse, ISyncChannelMsgBack iSyncChannelMsgBack) {
+                // channelID 频道ID
+                // channelType 频道类型
+                // minMessageSeq 最小消息seq
+                // maxMessageSeq 最大消息seq
+                // limit 同步数量
+                // reverse 是否是从大往小获取
+            }
+        });
+```

@@ -10,7 +10,7 @@ weight: 1020
 // 构建正文
  LiMVoiceContent audioMsgModel = new LiMVoiceContent(localPath, timeTrad);
  // 发送
- LiMaoIm.getInstance().getLiMConnectionManager().sendMessage(audioMsgModel, channelID, LiMChannelType.PERSONAL);
+ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(audioMsgModel, channelID, LiMChannelType.PERSONAL);
 ```
 
 参数说明:

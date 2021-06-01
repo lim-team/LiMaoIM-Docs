@@ -10,7 +10,7 @@ weight: 1000
 // 构建正文
  LiMTextContent textMsgModel = new LiMTextContent("我是文本消息");
  // 发送
- LiMaoIm.getInstance().getLiMConnectionManager().sendMessage(textMsgModel, channelID, LiMChannelType.PERSONAL);
+ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(textMsgModel, channelID, LiMChannelType.PERSONAL);
 ```
 
 参数说明:

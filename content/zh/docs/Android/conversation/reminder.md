@@ -13,8 +13,8 @@ weight: 1044
 ```java
 public class LiMMention {
     /**
-    * 狸猫IM SDK 目前已经定义了 liMReminderTypeMentionMe [有人@我]
-    * liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型，
+    * 狸猫IM SDK 目前已经定义了 LiMMentionType.liMReminderTypeMentionMe [有人@我]
+    * LiMMentionType.liMReminderTypeDraft [草稿] 两个类型 用户可以根据自己的需求自定义类型，
     * 一种相同的类型在最近会话中只会保存最新的提醒
     */
     public int type;
@@ -27,8 +27,15 @@ public class LiMMention {
 
 ###  获取频道里指定类型的提醒
 ```java
-LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelID, channelType, LiMMentionType.liMReminderTypeDraft);
+LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelId, channelType, limReminderType);
 ```
+参数说明:
+
+参数 | 类型 | 说明
+---|--- |---
+channelID | string | 频道ID
+channelType | byte | 频道类型
+limReminderType | int | 提醒类型
 
 ### 追加某个频道的提醒内容
 ```java
@@ -39,10 +46,10 @@ LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().getRem
 * @param channelType 频道类型
 * @param liMReminder 提醒项
 */
-LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder);
+LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder);
 ```
 
 ### 清除某个频道所有提醒项
 ```java
-LiMaoIm.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType);
+LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType);
 ```

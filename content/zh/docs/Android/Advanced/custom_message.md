@@ -50,7 +50,7 @@ public LiMMessageContent decodeMsg(JSONObject jsonObject) {
 
 3、注册消息
 ```java
-LiMaoIm.getInstance().getMessageManager().registerContentMsg(LiMCardContent.class);
+LiMaoIM.getInstance().getLiMMsgManager().registerContentMsg(LiMCardContent.class);
 ```
 
 注意：如果定义的消息对象需要进行intent页面传递参数需实现Parcelable的方法
