@@ -16,7 +16,7 @@ weight: 1020
 参数说明:
 
 
-参数 | 类型 | 说明
----|--- |---
-localPath | NSData | 语音文件本地地址
-timeTrad | NSInteger | 秒数
+| 参数      | 类型   | 说明             |
+| --------- | ------ | ---------------- |
+| localPath | String | 语音文件本地地址 |
+| timeTrad  | String | 秒数             |

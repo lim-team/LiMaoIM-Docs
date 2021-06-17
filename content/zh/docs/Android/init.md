@@ -22,8 +22,8 @@ token | String | 用户连接凭证（由后端提供）
    LiMaoIM.getInstance().getLiMConnectionManager().addOnGetIpAndPortListener(new IGetIpAndPort() {
             @Override
             public void getIP(IGetSocketIpAndPortListener iGetSocketIpAndPortListener) {
-                // 分布式需请求接口后返回IP和port
                 
             }
         });
 ```
+>注：分布式需请求接口后返回IP和port

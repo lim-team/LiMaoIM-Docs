@@ -27,12 +27,18 @@ LiMaoIM.getInstance().getLiMMsgManager().addOnSyncConversationListener(new ISync
 LiMaoIM.getInstance().getLiMMsgManager().addOnSyncChannelMsgListener(new ISyncChannelMsgListener() {
             @Override
             public void syncChannelMsgs(String channelID, byte channelType, long minMessageSeq, long maxMesageSeq, int limit, boolean reverse, ISyncChannelMsgBack iSyncChannelMsgBack) {
-                // channelID 频道ID
-                // channelType 频道类型
-                // minMessageSeq 最小消息seq
-                // maxMessageSeq 最大消息seq
-                // limit 同步数量
-                // reverse 是否是从大往小获取
             }
         });
 ```
+
+参数说明:
+
+
+| 参数          | 类型    | 说明               |
+| ------------- | ------- | ------------------ |
+| channelID     | String  | 频道ID             |
+| channelType   | byte    | 频道类型           |
+| minMessageSeq | long    | 最小消息seq        |
+| maxMessageSeq | long    | 最大消息seq        |
+| limit         | int     | 同步数量           |
+| reverse       | boolean | 是否是从大往小获取 |
