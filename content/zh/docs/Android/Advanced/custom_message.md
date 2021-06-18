@@ -61,7 +61,7 @@ LiMaoIM.getInstance().getLiMMsgManager().registerContentMsg(LiMCardContent.class
 >注：如果定义的消息对象需要进行intent页面传递参数需实现Parcelable的方法。如果需要在搜索聊天记录时，能搜索到该类型的消息，则需重写`getSearchableWord()`方法并返回搜索关键字。
 
 **附件消息**
-我们都知道，有些消息不只是纯文本消息。可能需要发送图片，语音，文件等。这时就需要带附件消息，对此狸猫IM提供了```LiMMediaMessageContent```来解决消息附件问题。并且狸猫IM sdk也内置了图片、文件、语音、视频等常用的消息model。这里自定义一个地理位置消息举例
+我们都知道，有些消息不只是纯文本消息。可能需要发送图片，语音，文件等。这时就需要带附件消息，对此狸猫IM提供了`LiMMediaMessageContent`来解决消息附件问题。并且狸猫IM sdk也内置了图片、文件、语音、视频等常用的消息model。这里自定义一个地理位置消息举例
 ```java
 public class LiMLocationContent extends LiMMediaMessageContent {
     public LiMLocationContent(double longitude, double latitude, String title, String address) {

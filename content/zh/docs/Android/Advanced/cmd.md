@@ -13,7 +13,6 @@ LiMaoIM.getInstance().getLiMCMDManager().addCmdListener("listener_key", new ICMD
             @Override
             public void onMsg(LiMCMD liMCMD) {
               // liMCMD.cmdKey 可通过该字段判断做不同业务操作
-              // todo
             }
         });
 ```
@@ -23,6 +22,5 @@ LiMaoIM.getInstance().getLiMCMDManager().addCmdListener("listener_key", new ICMD
 LiMaoIM.getInstance().getLiMCMDManager().removeCmdListener("listener_key");
 ```
 
-注意：app不可发送cmd类消息，cmd消息只能是服务器代发。
-
-sdk中内置了常用的```liMCMD.cmdKey```可查看```com.xinbida.limaoim.entity.LiMCMDKeys```文件
+>注：app不可发送cmd类消息，cmd消息只能是服务器代发。
+sdk中内置了常用的`liMCMD.cmdKey`可查看`com.xinbida.limaoim.entity.LiMCMDKeys`文件

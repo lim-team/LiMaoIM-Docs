@@ -4,6 +4,8 @@ linkTitle: "@消息"
 weight: 2030 
 ---
 
+狸猫IM所有消息都支持@指定用户或@所有人功能。以下以文本消息举例：
+
 ```java
 LiMTextContent textMsgModel = new LiMTextContent("我是@消息");
 //@指定用户

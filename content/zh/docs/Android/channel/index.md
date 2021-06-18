@@ -47,7 +47,7 @@ LiMaoIM.getInstance().getLiMChannelManager().updateExtra(channelID,channelType, 
 ### 事件
 
 **获取频道信息**
-LiMaoIm SDK中会判断本地是否有频道资料。如果sdk中没有频道资料会调用上层设置的```addGetChannelInfoListener```监听来获取指定的频道信息。
+LiMaoIm SDK中会判断本地是否有频道资料。如果sdk中没有频道资料会调用上层设置的`addGetChannelInfoListener`监听来获取指定的频道信息。
 ```java
 LiMaoIM.getInstance().getLiMChannelManager().addOnGetChannelInfoListener(new IGetChannelInfo() {
             @Override
