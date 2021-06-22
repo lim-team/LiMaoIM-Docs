@@ -1,138 +1,278 @@
-<html>
+<html style="margin: 0;">
 
 <head>
-    <title>
-        狸猫即时通讯
-    </title>
-    <meta http-equiv=Content-Language content=zh-cn>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="keywords" content="即时通讯、IM、私有化即时通讯，快速集成、Docker、多端同步、狸猫IM">
-    <meta name="description" content="领先的即时通讯私有云服务，二行代码即可通讯">
-	<link rel="stylesheet" href="./css/index.css" />
-	<script>
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "https://hm.baidu.com/hm.js?55e10b3ddb1d0365ff8e14d8a0d0860a";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
-		</script>
-		
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>狸猫IM</title>
 </head>
 
-<body>
-    <header class="header">
-        <section class="menusBox">
-            <a class="logo">
-                <img src="./assets/logo.png" />
-            </a>
-            <label>狸猫IM</label>
-            <ul class="menus">
-                <li>
-                    <a href="/">首页</a>
-                </li>
-                <li>
-                    <a href="#demo">下载</a>
-                </li>
-                <li>
-                    <a href="/docs" target="__bank">文档</a>
-                </li>
-            </ul>
-        </section>
-    </header>
-    <div class="main">
-        <div class="banner">
-            <div class="banner-content">
-                <h1>狸猫IM</h1>
-                <p class="h3" style="font-size: 30px;">领先的即时通讯<label style="font-size: 40px;color:#2F70F5">私有云</label>服务
-                </p>
-                <p class="h3" style="font-size: 30px;margin-top: 30px;"><label
-                        style="color: red;font-weight: 500;font-size: 40px;">二行代码</label>即可通讯</p>
-                <a class="button button-primary" style="font-size: 24px;margin-top: 60px;">查看文档</a>
+<script type="text/javascript">
+    window.onscroll = function () {
+
+        let marginTop = getDocumentTop()
+        if (marginTop > 300) {
+            document.getElementById('contact_info').style.display = 'block'
+        } else document.getElementById('contact_info').style.display = 'none'
+    }
+    function getDocumentTop() {
+        var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
+        if (document.body) {
+            bodyScrollTop = document.body.scrollTop;
+        }
+        if (document.documentElement) {
+            documentScrollTop = document.documentElement.scrollTop;
+        }
+        scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop;
+        return scrollTop;
+    }
+
+    function openDocs() {
+        console.log('sssdd')
+        window.open("http://limao.ai/docs/");
+    };
+    function godownload(elementId, speed) {
+        let destEle = document.getElementById(elementId);
+        let scrolltopTemp = document.documentElement.scrollTop || document.body.scrollTop;
+        let rect = destEle.getBoundingClientRect();
+        // 获取元素相对窗口的top值，此处应加上页面本身的偏移
+        let top = scrolltopTemp + rect.top;
+        let currentTop = 0;
+        let requestId;
+        // 采用requestAnimationFrame，平滑动画
+        function step() {
+            currentTop += speed;
+            if (currentTop <= top) {
+                document.body.scrollTo(0, currentTop);
+                requestId = window.requestAnimationFrame(step);
+            } else {
+                window.cancelAnimationFrame(requestId);
+            }
+        }
+        window.requestAnimationFrame(step);
+    }
+    function switchCode(code) {
+        document.getElementById('android').style.display = "none";
+        document.getElementById('ios').style.display = "none";
+        document.getElementById('web').style.display = "none";
+        document.getElementById(code).style.display = "block";
+        document.getElementById('typeios').style.borderBottom = "0px solid #2C87F6";
+        document.getElementById('typeandroid').style.borderBottom = "0px solid #2C87F6";
+        document.getElementById('typeweb').style.borderBottom = "0px solid #2C87F6";
+        document.getElementById('type' + code).style.borderBottom = "3px solid #2C87F6";
+    }
+    function isScrollBottom(obj) {
+        if (obj.scrollTop + obj.clientHeight === obj.scrollHeight) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+
+<body style="margin: 0;">
+    <div id="scrdiv">
+        <div class="bg">
+
+            <img style="width: 120px;height: 77px;margin-left: 150px;" src="./assets/蒙版.png" />
+            <img style="width: 60px;height: 44px;position: absolute;right: 0;" src="./assets/蒙版 (1).png" />
+            <div class="title">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#" onclick="godownload('downloadview',100)">下载</a></li>
+                    <li><a href="#" onclick="openDocs()">文档</a></li>
+                    <li class="move"> </li>
+                </ul>
+            </div>
+            <div style="margin-top:96px; position: absolute;right: 0;">
+                <div class="avatarbox">
+                    <div class="inner"></div>
+                    <div class="inner container"></div>
+                    <div class="inner outter"></div>
+                    <div class="inner outter2"></div>
+                    <div class="inner outter3"></div>
+                    <div class="inner outter4"></div>
+                    <div class="inner outter5"></div>
+                </div>
+
+                <img style="width: 400px;height: 326px;" src="./assets/编组 6.png" />
+                <img style="width: 90px;height:90px;position: absolute;left: -70;top: 80px;" src="./assets/椭圆形.png" />
+                <img style="width: 70px;height:70px;position: absolute;right: 0;top: 30px;"
+                    src="./assets/椭圆形 (1).png" />
+            </div>
+
+            <div class="home_div">
+
+                <label class="home_text">狸猫IM</label>
+                <div style="font-size: 14px;color: #666;margin-top: 10px;">
+                    领先的即时通讯
+                    <label style="font-size: 14px;color: #FF6059;">私有云</label>
+                    服务
+                    <br />
+                    <label style="font-size: 14px;color: #FF6059;">二行代码</label>
+                    即可通讯
+                </div>
+                <img onclick="openDocs()" style="width: 180px;height: 65px;margin-top: 30px;"
+                    src="./assets/icon_documents.png" />
+                <img style="z-index: -1;left: 0; width: 100%;height: 500px; position: absolute; top: 0;"
+                    src="./assets/内阴影.png" />
+            </div>
+
+        </div>
+        <div style="background-color: #fff; padding-top: 107px;margin-top: 100px; text-align: center;">
+            <img style="width: 241px;height: 29px;" src="./assets/二行代码即可通讯.png" />
+            <div style="margin-top: 46px;text-align: center;">
+                <div style="justify-content: center;display: flex;">
+                    <a id="typeios" href="javascript:void()" class="code_type" onclick="switchCode('ios')">IOS</a>
+                    <a id="typeandroid" style="border-bottom:3px solid transparent" href="javascript:void()"
+                        class="code_type" onclick="switchCode('android')">Android</a>
+                    <a id="typeweb" style="border-bottom:3px solid transparent" href="javascript:void()"
+                        class="code_type" onclick="switchCode('web')">Web</a>
+                </div>
+                <div class="code_bg">
+                    <div id="ios">
+                        <label style="color: #fff;text-align: left;">
+                            <span style="color: darkgreen;">// 连接</span>
+                            <br style="margin-top: 5px;" />
+                            <span>[[<span class="code_color1">LIMSDK shared</span>].connectionManager <span
+                                    class="code_color2">connect</span>];</span>
+                            <br style="margin-top: 5px;" />
+                            <span style="color: darkgreen;">// 发送</span>
+                            <br style="margin-top: 5px;" />
+
+                            <span>[[<span class="code_color1">LIMSDK shared</span>].chatManager <span
+                                    class="code_color2">sendMessage</span>:content channel:channel];</span>
+                        </label>
+                    </div>
+                    <div id="android" style="display: none;">
+                        <span style="color: #fff;text-align: left;">
+                            <span style="color: darkgreen;">// 注册</span>
+                            <br style="margin-top: 5px;" />
+                            <span class="code_color1">LiMaoIM</span>.<span
+                                class='code_color2'>getInstance()</span>.initIM(context,uid,token);
+                            <br style="margin-top: 5px;" />
+                            <span style="color: darkgreen;">// 发送</span>
+                            <br style="margin-top: 5px;" />
+                            <span class="code_color1">LiMaoIM</span>.<span
+                                class="code_color2">getInstance()</span>.<span
+                                class="code_color1">getLiMConnectionManager()</span>.sendMessage(new <span
+                                class="code_color2">LiMTextContent</span>("hello world！"),channelID,channelType);
+                        </span>
+                    </div>
+                    <div id="web" style="display: none;">
+                        <label style="color: #fff;text-align: left;">
+                            <span style="color: darkgreen;">// 连接</span>
+                            <br style="margin-top: 5px;" />
+                            <span><span class="code_color1">lim</span>.<span
+                                    class="code_color2">connect</span>(UID,TOKEN)</span>
+                            <br style="margin-top: 5px;" />
+                            <span style="color: darkgreen;">// 发送</span>
+                            <br style="margin-top: 5px;" />
+                            <span><span class="code_color1">lim</span>.<span
+                                    class="code_color2">sendMessage</span>(payload,channel) </span>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
-        <section class="reason">
-            <p class="title">选择狸猫IM的理由</p>
-            <ul>
-                <li>
-                    <img src="https://www.253.com/static/images/yun/choose/sms-icon1.png" />
-                    <p>一键部署</p>
-                    <p class="intro">采用当下流行的Docker部署方案，一条命令启动私有服务</p>
-                </li>
-                <li>
-                    <img src="https://www.253.com/static/images/yun/choose/sms-icon2.png" />
-                    <p>全程加密</p>
-                    <p class="intro">采用私有二进制加密协议、RSA+流式加密传输</p>
-                </li>
-                <li>
-                    <img src="https://www.253.com/static/images/yun/choose/sms-icon3.png" />
-                    <p>消息必达</p>
-                    <p class="intro">采用tcp协议+ack机制保证消息稳定可靠不丢</p>
-                </li>
-                <li>
-                    <img src="https://www.253.com/static/images/yun/choose/sms-icon4.png" />
-                    <p>多端同步</p>
-                    <p class="intro">web，pc，app消息实时同步</p>
-                </li>
-            </ul>
-        </section>
-        <section class="demo" id="demo">
-            <p class="title">立刻体验</p>
-            <p class="subtitle">全平台支持，扫描即可体验</p>
-            <ul>
-                <li>
-                    <img src="https://netease.im/res/image/im/demo@2x.png" />
-                    <p>点击体验Web版本</p>
-                </li>
-                <li>
-                    <img src="https://netease.im/res/image/im/wechat_im@2x.png" />
-                    <p>扫描体验Android端</p>
-                </li>
-                <li>
-                    <img src="https://netease.im/res/image/im/wechat_im@2x.png" />
-                    <p>扫描体验iOS端</p>
-                </li>
-                <li>
-                    <img src="https://netease.im/res/image/im/wechat_im@2x.png" />
-                    <p>点击下载MAC端</p>
-                </li>
-                <li>
-                    <img src="https://netease.im/res/image/im/wechat_im@2x.png" />
-                    <p>点击下载Window端</p>
-                </li>
-            </ul>
-        </section>
-        <section class="footer">
-            <p>
-                © 2020 上海字符串网络科技有限公司
-            </p>
-        </section>
-        <div class="consult">
-            <ul>
-                <li id="qq">
+        <div style="background-color: #fff; padding-top: 107px; text-align: center;">
+            <img style="width: 241px;height: 29px;" src="./assets/选择狸猫IM的理由.png" />
+            <div style="width: 50%;text-align: center;margin-top: 46px;display: flex;position: relative;left: 25%;">
+                <div style="width:33%;height: 360px;display: inline-block;" class="card_bg">
+                    <img style="width: 83px;height: 33px;position: absolute;top: 60;left: 20;"
+                        src="./assets/一键部署.png" />
+                    <label class="card_text"
+                        style="position: absolute;top: 110;left: 35;right: 35;">采用当下流行的Docker部署方案，一条命令启动私有服务</label>
+                    <img style="width: 120px;height: 122px;position: absolute;bottom: 0;right: 0;"
+                        src="./assets/形状结合.png" />
+                </div>
+                <div style="width: 67%;margin-left: 10px;display: inline-block;">
+                    <div class="card_bg" style="width: 100%;height: 180px;">
+                        <div style="position: absolute;top: 60;left: 20;display: flex;">
+                            <img style="width: 83px;height: 33px;margin-top: 5px;" src="./assets/全程加密.png" />
+                            <label class="card_text" style="margin-left: 20px;">采用私有二进制加密协议、<br />RSA+流式加密传输</label>
+                        </div>
+                        <img style="width: 120px;height: 122px;position: absolute;bottom: 0;right: 0;"
+                            src="./assets/icon_encryption.png" />
+                    </div>
+
+                    <div style="display: flex;margin-top: 10px;">
+                        <div class="card_bg" style="height: 180px; width: 50%;margin-right: 5px;">
+                            <img style="width: 83px;height: 33px;margin-top: 5px;position: absolute;top: 20;left: 20;"
+                                src="./assets/消息必达.png" />
+                            <img style="width: 100px;height: 100px;position: absolute;bottom: 0;right: 0;"
+                                src="./assets/icon_arrive.png" />
+                            <label class="card_text"
+                                style="position: absolute;top: 100;left: 20;">采用tcp协议+ack机制<br />保证消息稳定可靠不丢</label>
+                        </div>
+                        <div class="card_bg" style="height: 180px; width: 50%;margin-left: 5px;">
+                            <img style="width: 83px;height: 33px;margin-top: 5px;position: absolute;top: 20;left: 20;"
+                                src="./assets/多端同步.png" />
+                            <img style="width: 100px;height: 100px;position: absolute;bottom: 0;right: 0;"
+                                src="./assets/icon_sync.png" />
+                            <label class="card_text"
+                                style="position: absolute;top: 100;left: 20;">web，pc，app<br />消息实时同步</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 107px;text-align: center;width: 100%;" id="downloadview">
+            <img style="width: 360px;height: 31px;" src="./assets/全平台支持，点击即可体验.png" />
+            <div style="display: flex;margin-top: 34px;justify-content: center;">
+                <div class="download_card_bg">
+                    <label class="download_text">Web版本</label>
+                    <img style="width: 96px;height: 90px;" src="./assets/图标_Web.png" />
+                    <button class="download_btn">点击下载</button>
+                </div>
+                <div class="download_card_bg">
+                    <label class="download_text">Web版本</label>
+                    <img style="width: 96px;height: 90px;" src="./assets/图标_桌面端.png" />
+                    <button class="download_btn">点击下载</button>
+                </div>
+                <div class="download_card_bg">
+                    <label class="download_text">IOS版本</label>
+                    <img style="width: 96px;height: 90px;" src="./assets/图标_iOS端.png" />
+                    <button class="download_btn">点击下载</button>
+                </div>
+                <div class="download_card_bg">
+                    <label class="download_text">Android版本</label>
+                    <img style="width: 96px;height: 90px;" src="./assets/图标_Android端.png" />
+                    <button class="download_btn">点击下载</button>
+                </div>
+            </div>
+        </div>
+        <div style="width: 100%;height: 60px;margin-top: 60px; background: #2C87F6;text-align: center;">
+            <label style="color: #fff; position: relative;top: 20;">
+                Copyright © 2020 上海信必达网络科技有限公司
+            </label>
+        </div>
+
+        <div class="consult" id="contact_info" style="display: none;">
+
+            <ul style="width: 90px;">
+                <li id="qq" style="width: 90px;">
                     <div id="qq-button">
-                        <a target="__bank" href='http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes'>
-                            <img src="data:image/png;base64,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"
-                                class="el-image__inner" style="object-fit: fill;">
-                            <p>QQ</p>
+                        <a target="__bank" href="http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes">
+                            <img src="./assets/qq.png" style="width: 50px;" />
+                            <div style="line-height: 0px; margin-top: 30px;">QQ</div>
                         </a>
-                    </div>
-                    <div class="dialog" id="qq-dialog">
-                        <img src="./assets/qq.png" />
-                        <a target="__bank" href='http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes'>
-                            <div class="consult-button">立即咨询</div>
-                        </a>
+                        <div class="dialog" id="qq-dialog">
+                            <img src="./assets/qq_qr.png" style="width: 100px;height: 110px;" />
+                            <a target="__bank" href="http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes">
+                                <button class="consult-button">立即咨询</button>
+                            </a>
+                        </div>
                     </div>
                 </li>
-                <li id="wechat">
-                    <img style="margin-left: -5px;"
-                        src="data:image/png;base64,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"
-                        class="el-image__inner" style="object-fit: fill;">
-                    <p>微信</p>
+                <li id="wechat" style="width: 90px;margin-top: 60px;">
+                    <div>
+                        <img src="./assets/wechat.png" style="width: 50px;" />
+                        <div style="margin-top: 10px;">微信</div>
+                    </div>
                     <div class="dialog" id="wechat-dialog">
-                        <img src="./assets/wechat.png" />
-                        <div style="font-size: 14px;">微信扫描</div>
+                        <img src="./assets/wechat_qr.png" style="width: 100px;height: 100px;" />
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes">
+                            <p style="margin-top: 0px; margin-bottom: 0px;width: auto;height: 40px;">微信扫描</p>
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -141,3 +281,350 @@
 </body>
 
 </html>
+<style type="text/css">
+    .consult-button {
+        color: #2C87F6;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: transparent;
+        border-radius: 25px;
+        margin-top: 20px;
+        border-color: #2C87F6;
+    }
+
+    li:hover #qq-dialog {
+        display: block;
+    }
+
+    li:hover #wechat-dialog {
+        display: block;
+    }
+
+    #wechat .dialog {
+        position: absolute;
+        top: 100px;
+        left: -140px;
+        border: 1px solid #ecebeb;
+        width: 120px;
+        border-radius: 10px;
+        padding: 10px 10px;
+        background-color: white;
+        display: none;
+    }
+
+    #qq .dialog {
+        position: absolute;
+        top: -20px;
+        left: -140px;
+        border: 1px solid #ecebeb;
+        width: 120px;
+        border-radius: 10px;
+        padding: 10px 10px;
+        background-color: white;
+        display: none;
+    }
+
+    .dialog {
+        position: absolute;
+        top: 0px;
+        left: -140px;
+        border: 1px solid #ecebeb;
+        width: 120px;
+        border-radius: 10px;
+        padding: 10px 10px;
+        background-color: white;
+        display: none;
+    }
+
+    .consult {
+        right: 10px;
+        bottom: 130px;
+        height: 220px;
+        width: 90px;
+        border: 1px solid #ecebeb;
+        border-radius: 6px;
+        z-index: 999;
+        position: fixed;
+        bottom: 60px;
+        background: #fff;
+    }
+
+    .consult ul li {
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .code_color1 {
+        color: #2C87F6;
+    }
+
+    .code_color2 {
+        color: #f08d49;
+    }
+
+    .bg {
+        width: 100%;
+        white-space: nowrap;
+    }
+
+    .card_bg {
+        position: relative;
+        display: inline-block;
+        border-radius: 5px;
+        background: rgba(44, 135, 246, 2%);
+    }
+
+    .card_text {
+        text-align: left;
+        font-size: 14px;
+        font-family: PingFangSC-Medium, PingFang SC;
+        font-weight: 500;
+        color: #000000;
+        line-height: 20px;
+        display: inline-block;
+    }
+
+    .title {
+        margin-left: 300px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .code_bg {
+        text-align: left;
+        height: 100px;
+        background: #050505;
+        border-radius: 12px;
+        margin: 25px 0 0;
+        width: 50%;
+        display: inline-block;
+        padding: 25px 33.33333px;
+        font-size: 13px;
+    }
+
+    .code_type {
+        margin-right: 20px;
+        font-size: 17px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #000000;
+        line-height: 24px;
+        text-decoration: none;
+        border-bottom: 3px solid #2C87F6;
+
+    }
+
+    .code_type:hover {
+        color: #2C87F6;
+    }
+
+    .home_div {
+        margin-top: 10%;
+        margin-left: 20%;
+    }
+
+    .home_text {
+        font-size: 50px;
+        font-family: PingFang-SC-Heavy, PingFang-SC;
+        font-weight: 800;
+        color: #000000;
+        line-height: 70px;
+    }
+
+    .download_card_bg {
+        padding: 20px;
+        display: grid;
+        margin-right: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0px 0px 0 rgba(0, 57, 179, 0.2), 0 0px 6px 0 rgba(0, 57, 179, 0.19);
+        transition: all 0.15s ease;
+    }
+
+    .download_text {
+        margin-bottom: 20px;
+        font-family: PingFangSC-Regular, PingFang SC;
+        font-weight: 400;
+        color: #000000;
+        line-height: 24px;
+    }
+
+    .download_btn {
+        color: #2C87F6;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: transparent;
+        border-radius: 25px;
+        margin-top: 20px;
+        border-color: #2C87F6;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0px;
+        float: right;
+        position: relative;
+        /*子元素absol*/
+    }
+
+    ul li {
+        width: 110px;
+        height: 56px;
+        text-align: center;
+        float: left;
+    }
+
+    ul li a {
+        font-size: 17px;
+        font-family: PingFang-SC-Heavy, PingFang-SC;
+        font-weight: 800;
+        color: #000000;
+        text-decoration: none;
+        line-height: 56px;
+    }
+
+    ul a:hover {
+        color: #2C87F6;
+    }
+
+    .move {
+        height: 4px;
+        width: 110px;
+        border-top: 4px solid #2C87F6;
+        /*只需要将上边显示出来*/
+        position: absolute;
+        left: 0;
+        top: 52px;
+        transition: left .2s ease-in-out 0s;
+        /*包含四个过度属性：执行变换属性、执行时间、速率、延迟*/
+        -webkit-transition: left .2s ease-in-out 0s;
+        /*chrome和safari*/
+        -moz-transition: left .2s ease-in-out 0s;
+        /*firefox*/
+        -o-transition: left .2s ease-in-out 0s;
+        /*opera*/
+    }
+
+    li:nth-child(1):hover~.move {
+        /*li元素的父元素的第一个子元素，当鼠标停留其上时，move元素的left属性改变*/
+        left: 0px;
+    }
+
+    li:nth-child(2):hover~.move {
+        left: 110px;
+    }
+
+    li:nth-child(3):hover~.move {
+        left: 220px;
+    }
+
+    li:nth-child(4):hover~.move {
+        left: 330px;
+    }
+
+    li:nth-child(5):hover~.move {
+        left: 440px;
+    }
+
+    li:nth-child(6):hover~.move {
+        left: 550px;
+    }
+
+
+    div.inner {
+        width: 190px;
+        height: 190px;
+        background: rgba(0, 57, 179, 0.03);
+        border-radius: 50%;
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        z-index: 10;
+        animation-duration: 5.0s;
+        z-index: 10;
+        -webkit-animation-name: state1;
+        animation-name: state1;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        opacity: 0;
+    }
+
+    @keyframes state1 {
+        0% {
+            opacity: .5;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: .3;
+            -webkit-transform: scale(8);
+            transform: scale(8);
+        }
+
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(16);
+            transform: scale(16);
+        }
+    }
+
+    .avatarbox {
+        width: 2100px;
+        height: 500px;
+        position: absolute;
+        top: -170;
+        right: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    @keyframes scaleBox {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            -webkit-transform: scale(2);
+            transform: scale(2);
+        }
+
+        100% {
+            -webkit-transform: scale(4);
+            transform: scale(4);
+        }
+    }
+
+    .container {
+        animation-delay: .8s;
+    }
+
+    .outter {
+        animation-delay: 1.5s;
+    }
+
+    .outter2 {
+        animation-delay: 2.0s;
+    }
+
+    .outter3 {
+        animation-delay: 2.5s;
+    }
+
+    .outter4 {
+        animation-delay: 3.0s;
+    }
+
+    .outter5 {
+        animation-delay: 3.5s;
+    }
+</style>
