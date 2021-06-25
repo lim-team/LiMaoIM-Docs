@@ -12,7 +12,7 @@ weight: 2
 
 ### <font color='#2196F3'>重要的管理类</font>
 * `LiMConnectionManager` 连接管理。sdk中所有的连接监听，退出，连接im均是该类处理。
-* `LiMMsgManager` 消息管理。处理消息某个会话的历史记录，查询某条消息，搜索消息记录等。
+* `LiMMsgManager` 消息管理。处理查看某个会话的历史记录，查询某条消息，搜索消息，删除某条消息，监听新消息等。
 * `LiMConversationManager` 会话管理。处理修改某个会话的未读数量，获取最近最近会话列表等。最近会话管理可获取到`LiMReminderManager` 提醒管理。提醒管理可对最近会话增加强提醒效果，如：[有人@你][草稿][群审核]等。
 * `LiMChannelManager` 频道管理。对某个频道的置顶、免打扰、禁言、资料更新等均是该类处理。
 * `LiMChannelMembersManager` 频道成员管理。频道成员管理是对应于频道管理，可查询某个频道的所有成员等。
@@ -29,11 +29,11 @@ weight: 2
 
 ### <font color='#2196F3'>数据库说明</font>
 sdk中的数据库基本上满足了绝大部分的im业务，因此我们不需要也不建议更改数据库设计。如果您有特殊业务需要升级数据时，我们建议您按以下步骤升级数据库
-* 在`assets/lim_sql`文件中新建一个当期日期的后缀名为`sql`的文件
+* 在`assets/lim_sql`文件中新建一个大于所有文件名的数字的后缀名为`sql`的文件，这里以当期日期为例
 如下图
 <img src='db_update.jpg' width=400 height=150/>
 
 * 在新建文件中编写sql语句，sql语句中不能包含注释不然会运行报错
-* 修改`LiMDBHelper`文件中的`version`字段加一
+* 将`LiMDBHelper`文件中的`version`字段加一
 
-对此数据库升级就完成了
+每次升级只需要按照上面的步骤执行即可。对此数据库升级就完成了
