@@ -7,7 +7,7 @@ weight: 1044
 
 
 在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。
-{{<figure src ="../reminder.png" title ="">}}
+<img src='./reminder.png' width="400" height="200" />
 
 **最近会话提醒对象结构**
 ```java
@@ -20,7 +20,7 @@ public class LiMMention {
     public Object data;
 }
 ```
->注：狸猫IM SDK 目前已经定义了 `LiMMentionType.liMReminderTypeMentionMe`（[有人@我]），`LiMMentionType.liMReminderTypeDraft` （[草稿]） 两个类型。 用户可以根据自己的需求自定义类型，相同的类型在最近会话中只会保存最新的提醒
+><font color='#999' size=2>注：狸猫IM SDK 目前已经定义了 `LiMMentionType.liMReminderTypeMentionMe`（[有人@我]），`LiMMentionType.liMReminderTypeDraft` （[草稿]） 两个类型。 用户可以根据自己的需求自定义类型，相同的类型在最近会话中只会保存最新的提醒</font>
 
 **获取频道里指定类型的提醒**
 ```java

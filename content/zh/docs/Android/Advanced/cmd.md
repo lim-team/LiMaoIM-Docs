@@ -22,5 +22,5 @@ LiMaoIM.getInstance().getLiMCMDManager().addCmdListener("listener_key", new ICMD
 LiMaoIM.getInstance().getLiMCMDManager().removeCmdListener("listener_key");
 ```
 
->注：app不可发送cmd类消息，cmd消息只能是服务器代发。
-sdk中内置了常用的`liMCMD.cmdKey`可查看`com.xinbida.limaoim.entity.LiMCMDKeys`文件
+><font size=2 color='#999'>注：app不能发送cmd类消息，cmd消息只能是服务器代发。
+sdk中内置了常用的`liMCMD.cmdKey`可查看`com.xinbida.limaoim.entity.LiMCMDKeys`文件</font>

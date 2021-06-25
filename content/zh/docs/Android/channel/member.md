@@ -29,5 +29,3 @@ LiMaoIM.getInstance().getLiMChannelMembersManager().addOnAddChannelMemberListene
     //这里可用于监听添加群成员等
 });
 ```
->注：回掉都是在主线程。每个监听对于都有取消监听方法，退出页面后可取消对于的监听。
-

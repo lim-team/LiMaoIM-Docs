@@ -19,4 +19,4 @@ weight: 1020
 | 参数      | 类型   | 说明             |
 | --------- | ------ | ---------------- |
 | localPath | String | 语音文件本地地址 |
-| timeTrad  | String | 秒数             |
+| timeTrad  | int    | 时常             |

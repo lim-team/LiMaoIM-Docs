@@ -163,7 +163,9 @@ public class LiMLocationContent extends LiMMediaMessageContent {
 }
 
 ```
->注：发送附件消息sdk判断该消息是否已上传附件，如果未上传附件sdk会回掉到UI，UI需上传完附件后将附件的信息返回给sdk。并添加附件上传监听
+><font color='#999' size=2>注：发送附件消息sdk判断该消息是否已上传附件，如果未上传附件sdk会回掉到UI，UI需上传完附件后将附件的信息返回给sdk。并添加附件上传监听
+</font>
+
 **消息附件监听**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnUploadAttachListener(new IUploadAttachmentListener() {

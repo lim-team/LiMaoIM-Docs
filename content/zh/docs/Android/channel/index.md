@@ -29,7 +29,7 @@ LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannel(liMChannel);
 ```java
 LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannels(list);
 ```
->注：用户也可以在初始化sdk完成后，批量导入频道信息。如登录用户的好友等`channel`的`follow`字段可以指定频道关系。
+><font color='#999' size=2>注：用户也可以在初始化sdk完成后，批量导入频道信息。如登录用户的好友等`channel`的`follow`字段可以指定频道关系。</font>
 
 **设置频道置顶**
 ```java
@@ -61,7 +61,7 @@ LiMaoIM.getInstance().getLiMChannelManager().addOnGetChannelInfoListener(new IGe
             }
         });
 ```
->注：如果UI层有该用户或群信息就直接返回对于数据。如果没有需从网络请求后再回掉给sdk这里就直接返回null。或从网络获取信息后调用调用`refreshChannelCache`方法刷新频道信息。
+><font size=2 color='#999'>注：如果UI层有该用户或群信息就直接返回对于数据。如果没有需从网络请求后再回掉给sdk这里就直接返回null。或从网络获取信息后调用调用`refreshChannelCache`方法刷新频道信息。</font>
 
 **频道信息改变监听**
 ```java
@@ -72,6 +72,3 @@ LiMaoIM.getInstance().getLiMChannelManager().addOnRefreshChannelInfo("listener_k
             }
         });
 ```
-
->注：sdk回掉都是在主线程。常用的监听对应都有取消监听方法，退出页面后可取消对应的监听。
-

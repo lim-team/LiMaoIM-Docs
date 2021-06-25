@@ -6,6 +6,11 @@
 </head>
 
 <script type="text/javascript">
+    if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios|iOS|iPad|Backerry|WebOS|Symbian|Windows Phone|Phone)/i))) {
+        console.log('手机访问，直接下载app')
+    } else {
+        console.log('电脑访问，显示app下载二维码')
+    }
     window.onscroll = function () {
 
         let marginTop = getDocumentTop()
@@ -33,11 +38,9 @@
         let destEle = document.getElementById(elementId);
         let scrolltopTemp = document.documentElement.scrollTop || document.body.scrollTop;
         let rect = destEle.getBoundingClientRect();
-        // 获取元素相对窗口的top值，此处应加上页面本身的偏移
         let top = scrolltopTemp + rect.top;
         let currentTop = 0;
         let requestId;
-        // 采用requestAnimationFrame，平滑动画
         function step() {
             currentTop += speed;
             if (currentTop <= top) {
@@ -66,6 +69,23 @@
             return false;
         }
     }
+    // 下载文件
+    function download(type) {
+        if (type === 'android') {
+            var a = document.createElement("a");
+            a.setAttribute("href", 'https://github.com/JessYanCoding/AndroidAutoSize/archive/refs/heads/master.zip');
+            // a.setAttribute("target", "_blank");
+            a.setAttribute("id", "camnpr");
+            document.body.appendChild(a);
+            a.click();
+        } else if (type === 'ios') {
+
+        } else if (type === 'pc') {
+            // 下载pc版
+        } else if (type === 'web') {
+            window.open('http://49.235.59.182:81/')
+        }
+    }
 </script>
 
 <body style="margin: 0;">
@@ -76,13 +96,13 @@
             <img style="width: 60px;height: 44px;position: absolute;right: 0;" src="./assets/蒙版 (1).png" />
             <div class="title">
                 <ul>
-                    <li><a href="#">首页</a></li>
-                    <li><a href="#" onclick="godownload('downloadview',100)">下载</a></li>
-                    <li><a href="#" onclick="openDocs()">文档</a></li>
+                    <li><a href="#" style="font-size: 1.5em;">首页</a></li>
+                    <li><a href="#" onclick="godownload('downloadview',100)" style="font-size: 1.5em;">下载</a></li>
+                    <li><a href="#" onclick="openDocs()" style="font-size: 1.5em;">文档</a></li>
                     <li class="move"> </li>
                 </ul>
             </div>
-            <div style="margin-top:96px; position: absolute;right: 0;">
+            <div style="bottom: 35%; position: absolute;right: 0;">
                 <div class="avatarbox">
                     <div class="inner"></div>
                     <div class="inner container"></div>
@@ -102,20 +122,20 @@
             <div class="home_div">
 
                 <label class="home_text">狸猫IM</label>
-                <div style="font-size: 14px;color: #666;margin-top: 10px;">
+                <div style="font-size: 1.2em;color: #666;margin-top: 10px;">
                     领先的即时通讯
-                    <label style="font-size: 14px;color: #FF6059;">私有云</label>
+                    <label style="font-size: 1.2em;color: #FF6059;">私有云</label>
                     服务
                     <br />
-                    <label style="font-size: 14px;color: #FF6059;">二行代码</label>
+                    <label style="font-size: 1.2em;color: #FF6059;">二行代码</label>
                     即可通讯
                 </div>
                 <img onclick="openDocs()" style="width: 180px;height: 65px;margin-top: 30px;"
                     src="./assets/icon_documents.png" />
-                <img style="z-index: -1;left: 0; width: 100%;height: 500px; position: absolute; top: 0;"
-                    src="./assets/内阴影.png" />
-            </div>
 
+            </div>
+            <img style="z-index: -1;left: 0; width: 100%;height: 65%; position: absolute; top: 0;"
+                src="./assets/内阴影.png" />
         </div>
         <div style="background-color: #fff; padding-top: 107px;margin-top: 100px; text-align: center;">
             <img style="width: 241px;height: 29px;" src="./assets/二行代码即可通讯.png" />
@@ -221,26 +241,26 @@
                 <div class="download_card_bg">
                     <label class="download_text">Web版本</label>
                     <img style="width: 96px;height: 90px;" src="./assets/图标_Web.png" />
-                    <button class="download_btn">点击下载</button>
+                    <button class="download_btn" onclick="download('web')">立即体验</button>
                 </div>
                 <div class="download_card_bg">
-                    <label class="download_text">Web版本</label>
+                    <label class="download_text">PC版本</label>
                     <img style="width: 96px;height: 90px;" src="./assets/图标_桌面端.png" />
-                    <button class="download_btn">点击下载</button>
+                    <button class="download_btn" onclick="download('pc')">点击下载</button>
                 </div>
                 <div class="download_card_bg">
                     <label class="download_text">IOS版本</label>
                     <img style="width: 96px;height: 90px;" src="./assets/图标_iOS端.png" />
-                    <button class="download_btn">点击下载</button>
+                    <button class="download_btn" onclick="download('ios')">点击下载</button>
                 </div>
                 <div class="download_card_bg">
                     <label class="download_text">Android版本</label>
                     <img style="width: 96px;height: 90px;" src="./assets/图标_Android端.png" />
-                    <button class="download_btn">点击下载</button>
+                    <button class="download_btn" onclick="download('android')">点击下载</button>
                 </div>
             </div>
         </div>
-        <div style="width: 100%;height: 60px;margin-top: 60px; background: #2C87F6;text-align: center;">
+        <div style="width: 100%;height: 60px;margin-top: 100px; background: #2C87F6;text-align: center;">
             <label style="color: #fff; position: relative;top: 20;">
                 Copyright © 2020 上海信必达网络科技有限公司
             </label>
@@ -253,7 +273,7 @@
                     <div id="qq-button">
                         <a target="__bank" href="http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes">
                             <img src="./assets/qq.png" style="width: 50px;" />
-                            <div style="line-height: 0px; margin-top: 30px;">QQ</div>
+                            <div style="line-height: 0px; margin-top: 30px; font-size: 0.7em;">QQ</div>
                         </a>
                         <div class="dialog" id="qq-dialog">
                             <img src="./assets/qq_qr.png" style="width: 100px;height: 110px;" />
@@ -271,7 +291,8 @@
                     <div class="dialog" id="wechat-dialog">
                         <img src="./assets/wechat_qr.png" style="width: 100px;height: 100px;" />
                         <a href="http://wpa.qq.com/msgrd?v=3&uin=2025578386&site=qq&menu=yes">
-                            <p style="margin-top: 0px; margin-bottom: 0px;width: auto;height: 40px;">微信扫描</p>
+                            <p style="margin-top: 0px; font-size: 0.7em; margin-bottom: 0px;width: auto;height: 40px;">
+                                微信扫描</p>
                         </a>
                     </div>
                 </li>
@@ -286,12 +307,21 @@
         color: #2C87F6;
         padding-left: 20px;
         padding-right: 20px;
+        font-size: 0.7em;
         padding-top: 5px;
         padding-bottom: 5px;
         background-color: transparent;
         border-radius: 25px;
         margin-top: 20px;
         border-color: #2C87F6;
+    }
+
+    .consult-button:hover {
+        cursor: pointer;
+    }
+
+    .download_btn:hover {
+        cursor: pointer;
     }
 
     li:hover #qq-dialog {
@@ -340,14 +370,14 @@
 
     .consult {
         right: 10px;
-        bottom: 130px;
+        bottom: 150px;
         height: 220px;
         width: 90px;
         border: 1px solid #ecebeb;
         border-radius: 6px;
         z-index: 999;
         position: fixed;
-        bottom: 60px;
+        bottom: 100px;
         background: #fff;
     }
 
@@ -367,6 +397,8 @@
     .bg {
         width: 100%;
         white-space: nowrap;
+        min-height: 65%;
+        max-height: 90%;
     }
 
     .card_bg {
@@ -378,11 +410,11 @@
 
     .card_text {
         text-align: left;
-        font-size: 14px;
+        font-size: 1.2em;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
-        color: #000000;
-        line-height: 20px;
+        line-height: 27px;
+        color: #313131;
         display: inline-block;
     }
 
@@ -398,19 +430,19 @@
 
     .code_bg {
         text-align: left;
-        height: 100px;
+        height: 150px;
         background: #050505;
         border-radius: 12px;
         margin: 25px 0 0;
         width: 50%;
         display: inline-block;
         padding: 25px 33.33333px;
-        font-size: 13px;
+        font-size: 1.2em;
     }
 
     .code_type {
         margin-right: 20px;
-        font-size: 17px;
+        font-size: 1.5em;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
         color: #000000;
@@ -425,12 +457,13 @@
     }
 
     .home_div {
-        margin-top: 10%;
-        margin-left: 20%;
+        left: 20%;
+        bottom: 45%;
+        position: absolute;
     }
 
     .home_text {
-        font-size: 50px;
+        font-size: 2em;
         font-family: PingFang-SC-Heavy, PingFang-SC;
         font-weight: 800;
         color: #000000;
@@ -440,7 +473,7 @@
     .download_card_bg {
         padding: 20px;
         display: grid;
-        margin-right: 20px;
+        margin-right: 50px;
         border-radius: 5px;
         box-shadow: 0 0px 0px 0 rgba(0, 57, 179, 0.2), 0 0px 6px 0 rgba(0, 57, 179, 0.19);
         transition: all 0.15s ease;
@@ -450,6 +483,7 @@
         margin-bottom: 20px;
         font-family: PingFangSC-Regular, PingFang SC;
         font-weight: 400;
+        font-size: 1.2em;
         color: #000000;
         line-height: 24px;
     }
@@ -460,6 +494,7 @@
         padding-right: 20px;
         padding-top: 5px;
         padding-bottom: 5px;
+        font-size: 1.2em;
         background-color: transparent;
         border-radius: 25px;
         margin-top: 20px;
@@ -482,7 +517,7 @@
     }
 
     ul li a {
-        font-size: 17px;
+        font-size: 1.5em;
         font-family: PingFang-SC-Heavy, PingFang-SC;
         font-weight: 800;
         color: #000000;
@@ -580,10 +615,10 @@
 
     .avatarbox {
         width: 2100px;
-        height: 500px;
+        height: 2000px;
         position: absolute;
-        top: -170;
         right: 0;
+        bottom: 0;
         z-index: -1;
         overflow: hidden;
     }
