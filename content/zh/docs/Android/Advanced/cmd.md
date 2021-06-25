@@ -6,18 +6,21 @@ weight: 2020
 
 我们都知道有些消息不需要呈现在UI，只需在应用内部消化（如：头像修改，对于好友需及时修改但用不需显示在UI上的消息）。狸猫IM对此设计了cmd消息。
 
-**监听cmd消息**
+**<font color='#2196F3'>监听cmd消息</font>**
 
 ```java
 LiMaoIM.getInstance().getLiMCMDManager().addCmdListener("listener_key", new ICMDListener() {
             @Override
             public void onMsg(LiMCMD liMCMD) {
-              // liMCMD.cmdKey 可通过该字段判断做不同业务操作
             }
         });
 ```
 
-**移除监听**
+`LiMCMD` 说明
+* cmdKey 命令类型。可通过该字段判断做不同业务操作
+* paramJsonObject 命令参数。不同命令对应的参数数据不同
+
+**<font color='#2196F3'>移除监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMCMDManager().removeCmdListener("listener_key");
 ```

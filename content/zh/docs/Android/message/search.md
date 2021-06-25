@@ -35,16 +35,18 @@ LiMaoIM.getInstance().getLiMMsgManager().searchWithChannel(channelID,channelType
 
 >注：自定义消息如果需要被查询到。需重写自定义消息的`getSearchableWord()`方法，并返回需要搜索的提示文字。
 
-**查询频道聊天日期**
+**<font color='#2196F3'>查询频道聊天日期</font>**
+
 我们在做消息搜索时，如果需要通过日期查询某个会话的聊天记录。这时需要查询到该会话的所有产生聊天记录的日期，如以下效果：
-<img src='chat_history_date.jpeg' width="200" height="400" alt="聊天记录日期"/>
+<img src='chat_history_date.jpg' width="200" height="400" alt="聊天记录日期"/>
 
 这时需调用以下方法获取到对应的消息日期
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().getMessageGroupByDateWithChannel(channelID, channelType);
 ```
 
-**搜索某些类型消息**
+**<font color='#2196F3'>搜索某些类型消息</font>**
+
 当消息类型很多时，这时就需要通过消息类型来搜索聊天记录。对此狸猫sdk提供来以下方法
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().searchMsgWithChannelAndContentTypes(channelID, channelType, oldestOrderSeq, 20, types);

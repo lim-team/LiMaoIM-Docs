@@ -5,10 +5,10 @@ weight: 2040
 ---
 
 消息回应并不会产生新的消息，只会对操作消息进行修改。如以下效果
-<img src='msg_reactions.png'/>
+<img src='msg_reactions.jpg'/>
 对此消息对象`LiMMsg`中`reactionList`字段对应了本条消息的回应数据。
 
-### 消息点赞实现步骤
+### <font color='#2196F3'>消息点赞实现步骤</font>
 
 * 1、app点赞时调用自己服务接口处理消息点赞操作
 * 2、收到同步消息回应cmd时同步消息后调用同步消息回应接口并返回给sdk

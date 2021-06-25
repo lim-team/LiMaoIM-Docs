@@ -4,9 +4,11 @@ linkTitle: "自定义消息"
 weight: 2010 
 ---
 
-**普通消息**
+### <font color='#2196F3'>普通消息</font>
+
 为了满足更多的应用场景，狸猫IM提供自定义消息。自定义消息分为三个步骤，这里自定义一个名片消息举例
-1、继承 LiMMessageContent 和定义字段
+
+<font color='#A5C2FF'>__1、继承 LiMMessageContent 和定义字段__</font>
 ```java
 public class LiMCardContent extends LiMMessageContent {
     //注意无参构造方法必须写
@@ -23,7 +25,7 @@ public class LiMCardContent extends LiMMessageContent {
 }
 ```
 
-2、解码和编码
+<font color='#A5C2FF'>__2、解码和编码__</font>
 ```java
  @Override
 public JSONObject encodeMsg() {
@@ -53,7 +55,8 @@ public String getSearchableWord() {
 }
 ```
 
-3、注册消息
+<font color='#A5C2FF'>__3、注册消息__</font>
+
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().registerContentMsg(LiMCardContent.class);
 ```
@@ -166,7 +169,7 @@ public class LiMLocationContent extends LiMMediaMessageContent {
 ><font color='#999' size=2>注：发送附件消息sdk判断该消息是否已上传附件，如果未上传附件sdk会回掉到UI，UI需上传完附件后将附件的信息返回给sdk。并添加附件上传监听
 </font>
 
-**消息附件监听**
+### <font color='#2196F3'>监听消息附件</font>
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnUploadAttachListener(new IUploadAttachmentListener() {
     @Override

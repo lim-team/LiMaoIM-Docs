@@ -17,7 +17,7 @@ LiMaoIM.getInstance().initIM(context, uid, token);
 | uid     | String  | 用户连接的唯一ID（由后端提供） |
 | token   | String  | 用户连接凭证（由后端提供）     |
 
-## 其他配置
+## <font color='#2196F3'>其他配置</font>
 ```java
    LiMaoIM.getInstance().getLiMConnectionManager().addOnGetIpAndPortListener(new IGetIpAndPort() {
             @Override

@@ -22,7 +22,7 @@ public class LiMMention {
 ```
 ><font color='#999' size=2>注：狸猫IM SDK 目前已经定义了 `LiMMentionType.liMReminderTypeMentionMe`（[有人@我]），`LiMMentionType.liMReminderTypeDraft` （[草稿]） 两个类型。 用户可以根据自己的需求自定义类型，相同的类型在最近会话中只会保存最新的提醒</font>
 
-**获取频道里指定类型的提醒**
+**<font color='#2196F3'>获取频道里指定类型的提醒</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelId, channelType, limReminderType);
 ```
@@ -35,7 +35,7 @@ LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getRem
 | channelType     | byte   | 频道类型 |
 | limReminderType | int    | 提醒类型 |
 
-**追加某个频道的提醒内容**
+**<font color='#2196F3'>追加某个频道的提醒内容</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder);
 ```
@@ -49,7 +49,7 @@ LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().append
 | liMReminder | LiMReminder | 提醒项   |
 
 
-**清除某个频道所有提醒项**
+**<font color='#2196F3'>清除某个频道所有提醒项</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType);
 ```

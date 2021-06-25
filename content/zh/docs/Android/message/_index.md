@@ -5,7 +5,7 @@ date: 2020-02-06
 weight: 1033
 ---
 
-**发送消息**
+**<font color='#2196F3'>发送消息</font>**
 ```java
 LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMBaseContentMsgModel, channelID, channelType);
 ```
@@ -25,7 +25,7 @@ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMMsg);
 >注：`LiMMsg`中的`no_persist`字段设置为true，标识本条消息发送方和接收方都不会存储。`red_dot`设置为`false`接收方收到消息不会显示红点。
 
 
-**新消息监听**
+**<font color='#2196F3'>新消息监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnNewMsgListener("listener_key", new INewMsgListener() {
             @Override

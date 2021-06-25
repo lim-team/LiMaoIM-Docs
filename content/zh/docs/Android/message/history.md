@@ -5,7 +5,7 @@ date: 2020-02-06
 weight: 1050
 ---
 
-**查询指定频道的历史消息记录**
+**<font color='#2196F3'>查询指定频道的历史消息记录</font>**
 
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, channelType, oldestOrderSeq, contain, dropDown, pageSize, new IGetOrSyncHistoryMsgBack() {

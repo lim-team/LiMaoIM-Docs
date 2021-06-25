@@ -7,7 +7,7 @@ weight: 1020
 
 为了让用户更加精确的了解收发消息进度，狸猫IM提供了丰富的消息监听。
 
-**发送消息入库返回**
+**<font color='#2196F3'>发送消息入库返回</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnSendMsgCallback("", new ISendMsgCallBackListener() {
             @Override
@@ -18,7 +18,7 @@ LiMaoIM.getInstance().getLiMMsgManager().addOnSendMsgCallback("", new ISendMsgCa
 ```
 >注：该监听只是消息已存库回掉，并非发送返回。
 
-**发送消息结果返回监听**
+**<font color='#2196F3'>发送消息结果返回监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addSendMsgAckListener("listener_key", new ISendACK() {
             @Override
@@ -32,8 +32,9 @@ LiMaoIM.getInstance().getLiMMsgManager().addSendMsgAckListener("listener_key", n
 ```
 >注：可通过该监听刷新发送消息状态等。
 
-**刷新消息监听**
 
+
+**<font color='#2196F3'>刷新消息监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnRefreshMsgListener("listener_key", new IRefreshMsg() {
             @Override
@@ -43,7 +44,7 @@ LiMaoIM.getInstance().getLiMMsgManager().addOnRefreshMsgListener("listener_key",
         });
 ```
 
-**消息附件监听**
+**<font color='#2196F3'>消息附件监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnUploadAttachListener(new IUploadAttachmentListener() {
     @Override
@@ -56,7 +57,7 @@ LiMaoIM.getInstance().getLiMMsgManager().addOnUploadAttachListener(new IUploadAt
 
 >注：如果自定义消息model带附件需继承LiMMediaMessageContent，并监听以上方法。
 
-**删除消息监听**
+**<font color='#2196F3'>删除消息监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnDeleteMsgListener("listener_key", new IDeleteMsgListener() {
             @Override
@@ -65,5 +66,7 @@ LiMaoIM.getInstance().getLiMMsgManager().addOnDeleteMsgListener("listener_key", 
             }
         });
 ```
+
+
 
 
