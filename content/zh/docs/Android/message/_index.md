@@ -24,8 +24,8 @@ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMMsg);
 ```
 >注：`LiMMsg`中的`no_persist`字段设置为true，标识本条消息发送方和接收方都不会存储。`red_dot`设置为`false`接收方收到消息不会显示红点。
 
-**新消息监听**
 
+**新消息监听**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnNewMsgListener("listener_key", new INewMsgListener() {
             @Override
