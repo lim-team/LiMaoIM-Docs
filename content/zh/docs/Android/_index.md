@@ -7,7 +7,7 @@ weight: 2
 ### <font color='#2196F3'>sdk流程</font>
 
 <img src='./sdk_technological_process.png' />
-如上图所示。sdk和app直接关系及流程：app初始化sdk和添加事件监听，sdk在收到消息或发送消息都会先存库后在通知到app更新到UI。
+如上图所示。sdk和app直接关系及流程：app初始化sdk并添加事件监听，sdk在收到消息或发送消息都会先存库后在通知到app更新到UI。app调用sdk中的方法修改数据库，sdk也会通知UI做对应的刷新。
 
 
 ### <font color='#2196F3'>重要的管理类</font>
@@ -29,11 +29,25 @@ weight: 2
 
 ### <font color='#2196F3'>数据库说明</font>
 sdk中的数据库基本上满足了绝大部分的im业务，因此我们不需要也不建议更改数据库设计。如果您有特殊业务需要升级数据时，我们建议您按以下步骤升级数据库
-* 在`assets/lim_sql`文件中新建一个大于所有文件名的数字的后缀名为`sql`的文件，这里以当期日期为例
+* 在`assets/lim_sql`文件中新建一个大于所有文件名的数字的并且后缀名为`sql`的文件，这里以当期日期为例
 如下图
 <img src='db_update.jpg' width=400 height=150/>
 
 * 在新建文件中编写sql语句，sql语句中不能包含注释不然会运行报错
 * 将`LiMDBHelper`文件中的`version`字段加一
 
-每次升级只需要按照上面的步骤执行即可。对此数据库升级就完成了
+对此数据库升级就完成了，每次升级只需要按照上面的步骤执行即可。具体升级实现请查看`com.xinbida.limaoim.db.LiMDBUpgrade`文件
+
+
+### <font color='#2196F3'>联系人资料对接</font>
+一般情况下如果sdk中没有某个频道资料时，sdk会通知到UI层获取频道资料。在获取网络资料时UI会显示频道的默认头像和名称，如果是用户好友时，显示默认头像这种体验非常不好。因此我们可以提前将好友的资料对接到sdk中，这样在收到用户信息时能第一时间显示用户的头像和名称。
+**<font color='#2196F3'>添加或修改多个频道</font>**
+```java
+LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannels(liMChannelList);
+```
+参数说明:
+| 参数           | 类型             | 说明     |
+| -------------- | ---------------- | -------- |
+| liMChannelList | List<LiMChannel> | 频道集合 |
+
+><font color='#999' size=2>注：由于sdk中并没有好友或用户的概念，对此你可以通过channel中的`follow`字段标记为好友关系。更多关于`LiMChannel`中的字段请查看`com.xinbida.limaoim.entity.LiMChannel`文件</font>

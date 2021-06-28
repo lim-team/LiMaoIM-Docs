@@ -9,30 +9,30 @@ weight: 1020
 
 **<font color='#2196F3'>发送消息入库返回</font>**
 ```java
-LiMaoIM.getInstance().getLiMMsgManager().addOnSendMsgCallback("", new ISendMsgCallBackListener() {
+LiMaoIM.getInstance().getLiMMsgManager().addOnSendMsgCallback("listener_key", new ISendMsgCallBackListener() {
             @Override
             public void onInsertMsg(LiMMsg liMMsg) {
                 
             }
         });
 ```
->注：该监听只是消息已存库回掉，并非发送返回。
+>注：该监听只是消息已存库回掉，并非发送返回。在该事件返回中可将消息展示在UI上
 
 **<font color='#2196F3'>发送消息结果返回监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addSendMsgAckListener("listener_key", new ISendACK() {
             @Override
             public void msgACK(long clientSeq, String messageID, long messageSeq, byte reasonCode) {
-                // clientSeq 客户端序列号
-                // messageID 服务器消息ID
-                // messageSeq 服务器序列号
-                // reasonCode 消息状态码【0:发送中1:成功2:发送失败3:不是好友或不在群内4:黑名单】
             }
         })
 ```
->注：可通过该监听刷新发送消息状态等。
+返回字段说明
+* `clientSeq` 客户端序列号，可通过该字段判断本地消息唯一性
+* `messageID` 服务器消息ID
+* `messageSeq` 服务器序列号
+* `reasonCode` 消息状态码【0:发送中1:成功2:发送失败3:不是好友或不在群内4:黑名单】
 
-
+>注：该监听是指某条消息的发送结果状态，可通过该监听刷新发送消息状态等。
 
 **<font color='#2196F3'>刷新消息监听</font>**
 ```java
