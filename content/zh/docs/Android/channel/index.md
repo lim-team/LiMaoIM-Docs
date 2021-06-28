@@ -16,6 +16,24 @@ weight: 1050
 ```java
 LiMaoIM.getInstance().getLiMChannelManager().getLiMChannel(channelId, channelType);
 ```
+
+当用户或群特别多时，用户希望通过搜索来定位到某个群，或者某个群内的成员。如下图所示
+
+<img src='search_channel.jpg' width=200 height=250/>
+
+狸猫sdk提供了搜索本地所有包含某个关键词的频道和频道成员的方法
+
+**<font color='#2196F3'>搜索频道及成员</font>**
+```java
+LiMaoIM.getInstance().getLiMChannelManager().search(searchKey)
+```
+
+在狸猫SDK中并没有用户好友的概念，但是也是支持好友的信息存储及查询。如果你对接了联系人资料在sdk中，可通过以下方法查询用户好友列表
+```java
+LiMaoIM.getInstance().getLiMChannelManager().getChannelsWithFollowAndStatus(LiMChannelType.PERSONAL, 1, 1);
+```
+><font color='#999' size=2>注：通过`follow`和`status`字段查询频道信息，传入参数由用户在对接用户联系人资料在sdk所决定。联系人资料对接详情请查看[联系人资料对接](/content/zh/docs/Android/_index.md)</font>
+
 **<font color='#2196F3'>刷新频道缓存信息</font>**
 ```java
 LiMaoIM.getInstance().getLiMChannelManager().refreshChannelCache(liMChannel);

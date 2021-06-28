@@ -7,7 +7,13 @@ weight: 1050
 
 当聊天消息很多时，如果想查看某天的聊天信息，滑动查看消息记录就特别麻烦。这时我们需要通过搜索来查找我们需要的消息。狸猫IM提供了丰富的查询方法。
 
-**全局搜索**
+我们在做聊天时，需要搜索本地包含某个字符的所有聊天记录，如下图效果
+
+<img src='search_all_msg.jpg' width=200 height=300/>
+
+对此狸猫IM提供了一个全局搜索的方法，可搜索本地所有包含某个关键词的方法
+
+**<font color='#2196F3'>全局搜索</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().search(searchKey);
 ```
@@ -20,7 +26,7 @@ LiMaoIM.getInstance().getLiMMsgManager().search(searchKey);
 | messageCount   | int        | 消息条数           |
 
 
-**查询某个频道的消息**
+**<font color='#2196F3'>查询某个频道的消息</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().searchWithChannel(channelID,channelType,searchKey);
 ```
