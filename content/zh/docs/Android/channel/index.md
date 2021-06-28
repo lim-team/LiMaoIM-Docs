@@ -45,6 +45,7 @@ LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannel(liMChannel);
 ```
 
 为了收到消息第一时间显示channel的头像和名称，用户在登录后，获取到用户好友列表时可以先将好友资料提前注册到sdk中
+
 **<font color='#2196F3'>批量保存频道</font>**
 ```java
 LiMaoIM.getInstance().getLiMChannelManager().addOrUpdateChannels(list);

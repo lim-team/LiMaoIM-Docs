@@ -14,8 +14,8 @@ LiMaoIM.getInstance().getLiMConnectionManager().connection();
 ```java
 LiMaoIM.getInstance().getLiMConnectionManager().disconnect(false);
 ```
-><font color='#999' size=2>注：isLogout：true[sdk不再重连]，false[sdk会保持重连]</font>
-
+><font color='#999' size=2>注：isLogout：true[sdk不再重连]，false[sdk会保持重连]。</font>
+### <font color='#2196F3'>事件</font>
 **<font color='#2196F3'>连接状态监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMConnectionManager().addOnConnectionStatusListener(new IConnectionStatus() {
