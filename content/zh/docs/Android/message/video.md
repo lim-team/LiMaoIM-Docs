@@ -5,7 +5,7 @@ date: 2020-02-06
 weight: 1030
 ---
 
-示例:
+发送视频消息示例:
 ```java
 // 构建正文
 LiMVideoContent videoMsgModel = new LiMVideoContent();
@@ -13,8 +13,8 @@ videoMsgModel.coverLocalPath = "";
 videoMsgModel.localPath = "";
 videoMsgModel.size = 0;
 videoMsgModel.second = 0;
- // 发送
- LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(videoMsgModel, channelID, LiMChannelType.PERSONAL);
+// 发送
+LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(videoMsgModel, channelID, LiMChannelType.PERSONAL);
 ```
 
 参数说明:

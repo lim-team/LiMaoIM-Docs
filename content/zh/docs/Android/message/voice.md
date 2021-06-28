@@ -5,12 +5,12 @@ date: 2020-02-06
 weight: 1020
 ---
 
-示例:
+发送语音消息示例:
 ```java
 // 构建正文
- LiMVoiceContent audioMsgModel = new LiMVoiceContent(localPath, timeTrad);
- // 发送
- LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(audioMsgModel, channelID, LiMChannelType.PERSONAL);
+LiMVoiceContent audioMsgModel = new LiMVoiceContent(localPath, timeTrad);
+// 发送
+LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(audioMsgModel, channelID, LiMChannelType.PERSONAL);
 ```
 
 参数说明:

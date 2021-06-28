@@ -4,6 +4,7 @@ linkTitle: "连接与断开"
 date: 2020-02-06
 weight: 1020
 ---
+在注册完狸猫sdk后就可以对IM进行连接、断开操作了。
 
 **<font color='#2196F3'>连接</font>**
 ```java
@@ -24,10 +25,4 @@ LiMaoIM.getInstance().getLiMConnectionManager().addOnConnectionStatusListener(ne
             }
         });
 ```
-status返回状态说明：
-* 0 失败
-* 1 成功
-* 2 被踢（其他设备登录）需清除token退出到登录页面
-* 3 同步消息中
-* 4 连接中
-* 5 无网络
+><font color='#999' size=2>注：连接返回状态请查看[状态码](/content/zh/docs/Android/status.md)</font>

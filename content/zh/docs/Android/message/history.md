@@ -26,4 +26,4 @@ LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, cha
 | dropDown        | boolean | true：下拉false：上拉                             |
 | pageSize        | int     | 查询消息数量                                      |
 
->注：如果本地没有消息记录或者消息存在不连续问题，这时需从网络获取消息记录再返回到UI。这时UI需监听获取channel的历史消息具体查看[离线消息](/content/zh/docs/Android/message/offline_msg.md)对接
+><font color='#999' size=2>注：如果本地没有消息记录或者消息存在不连续问题，这时需从网络获取消息记录再返回到UI。这时UI需监听获取channel的历史消息具体查看[离线消息](/content/zh/docs/Android/message/offline_msg.md)对接</font>

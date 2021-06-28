@@ -4,6 +4,7 @@ linkTitle: "消息收发"
 date: 2020-02-06
 weight: 1033
 ---
+在注册并连接IM成功后，我们就可以收发消息了。
 
 **<font color='#2196F3'>发送消息</font>**
 ```java
