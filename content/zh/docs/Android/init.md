@@ -18,7 +18,7 @@ LiMaoIM.getInstance().initIM(context, uid, token);
 | token   | String  | 用户连接凭证（由后端提供）     |
 
 如果聊天服务器是支持分布式部署时，这时app需通过接口获取聊天的port和IP。如果是单机的话就直接返回固定的IP和端口。并监听以下方法
-### <font color='#2196F3'>获取聊天IP和port</font>
+### <font color='#2196F3' size=3>获取聊天IP和port</font>
 ```java
    LiMaoIM.getInstance().getLiMConnectionManager().addOnGetIpAndPortListener(new IGetIpAndPort() {
             @Override

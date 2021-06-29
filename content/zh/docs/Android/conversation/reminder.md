@@ -7,7 +7,8 @@ weight: 1044
 
 
 在即时通讯软件中有诸多需要显示提醒的内容，如果下图，在狸猫IM中，我们统一抽象为 “提醒”功能。
-<img src='./reminder.png' width="400" height="200" />
+
+<img src='../reminder.png' width="400" height="200" />
 
 **最近会话提醒对象结构**
 ```java
@@ -24,7 +25,7 @@ public class LiMMention {
 
 如果我们要查询某个会话的固定的某个提醒，比如获取一个会话的[草稿]信息就需使用以下方法
 
-**<font color='#2196F3'>获取频道里指定类型的提醒</font>**
+**<font color='#2196F3' size=3>获取频道里指定类型的提醒</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getReminder(channelId, channelType, limReminderType);
 ```
@@ -39,7 +40,7 @@ LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().getRem
 
 如果在聊天中输入的信息并没有点击发送，这时我们需将编辑的内容存入草稿，并更新显示到最近会话对应的会话项，这时需追加会话的提醒内容
 
-**<font color='#2196F3'>追加某个频道的提醒内容</font>**
+**<font color='#2196F3' size=3>追加某个频道的提醒内容</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().appendReminder(channelId, channelType, liMReminder);
 ```
@@ -54,7 +55,7 @@ LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().append
 
 当点击某个会话进入到聊天中时，需将对应会话的提醒删除。
 
-**<font color='#2196F3'>清除某个频道所有提醒项</font>**
+**<font color='#2196F3' size=3>清除某个频道所有提醒项</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().getLiMReminderManager().clearAllReminder(channelId, channelType);
 ```

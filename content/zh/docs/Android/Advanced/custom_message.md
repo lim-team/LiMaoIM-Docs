@@ -4,9 +4,10 @@ linkTitle: "自定义消息"
 weight: 2010 
 ---
 
-### <font color='#2196F3'>普通消息</font>
 
 为了满足更多的应用场景，狸猫IM提供自定义消息。自定义消息分为三个步骤，这里自定义一个名片消息举例
+
+### <font color='#2196F3' size=3>普通消息</font>
 
 <font color='#A5C2FF'>__1、继承 LiMMessageContent 和定义字段__</font>
 ```java
@@ -24,7 +25,6 @@ public class LiMCardContent extends LiMMessageContent {
     public String avatar;
 }
 ```
-
 <font color='#A5C2FF'>__2、解码和编码__</font>
 ```java
  @Override
@@ -66,13 +66,9 @@ public String getDisplayContent() {
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().registerContentMsg(LiMCardContent.class);
 ```
-
 ><font color='#999' size=2>注：自定义消息必须提供无参构造方法。如果定义的消息对象需要进行intent页面传递参数需实现Parcelable的方法。如果需要在搜索聊天记录时，能搜索到该类型的消息，则需重写`getSearchableWord()`方法并返回搜索关键字。在显示自定义消息的内容时，如果重写了`getDisplayContent()`方法，就可以直接通过该方法显示内容</font>
-
-### <font color='#2196F3'>附件消息</font>
-
+### <font color='#2196F3' size=3>附件消息</font>
 我们都知道，有些消息不只是纯文本消息。可能需要发送图片，语音，文件等。这时就需要带附件消息，对此狸猫IM提供了`LiMMediaMessageContent`来解决消息附件问题。并且狸猫IM sdk也内置了图片、文件、语音、视频等常用的消息model。这里自定义一个地理位置消息举例
-
 ```java
 public class LiMLocationContent extends LiMMediaMessageContent {
     public LiMLocationContent(double longitude, double latitude, String title, String address) {
@@ -172,11 +168,10 @@ public class LiMLocationContent extends LiMMediaMessageContent {
     }
 
 }
-
 ```
 为了更好的用户体验，狸猫SDK将发送消息附件做成了异步上传的操作。发送附件消息sdk判断该消息是否已上传附件，如果未上传附件sdk会回掉到UI，UI需上传完附件后将附件的信息返回给sdk。对此用户需添加附件上传监听
 
-**<font color='#2196F3'>监听消息附件</font>**
+**<font color='#2196F3' size=3>监听消息附件</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnUploadAttachListener(new IUploadAttachmentListener() {
     @Override

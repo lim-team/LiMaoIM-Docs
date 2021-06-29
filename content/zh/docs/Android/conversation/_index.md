@@ -8,12 +8,12 @@ weight: 1040
 
 当收到一条消息时，会自动生成该消息对应的最近会话。值得注意的是最近会话不等同于会话，删除最近会话并不会影响会话
 
-**<font color='#2196F3'>查询最近会话</font>**
+**<font color='#2196F3' size=3>查询最近会话</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().queryMsgList();
 ```
 
-**<font color='#2196F3'>标记某个最近会话为已读/未读</font>**
+**<font color='#2196F3' size=3>标记某个最近会话为已读/未读</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().updateMsgRedDotCount(channelID, channelType, unreadCount);
 ```
@@ -26,7 +26,7 @@ LiMaoIM.getInstance().getLiMConversationManager().updateMsgRedDotCount(channelID
 | unreadCount | int    | 未读消息数量 |
 
 
-**<font color='#2196F3'>删除某个最近会话</font>**
+**<font color='#2196F3' size=3>删除某个最近会话</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().deleteMsg(channelID, channelType);
 ```
@@ -38,13 +38,13 @@ LiMaoIM.getInstance().getLiMConversationManager().deleteMsg(channelID, channelTy
 | channelID   | string | 频道ID   |
 | channelType | byte   | 频道类型 |
 
-**<font color='#2196F3'>清空最近会话</font>**
+**<font color='#2196F3' size=3>清空最近会话</font>**
 ```java
 LiMaoIM.getInstance().getLiMConversationManager().clearAll();
 ```
 
-### <font color='#2196F3'>事件</font>
-**<font color='#2196F3'>刷新最近会话</font>**
+### <font color='#2196F3' size=4>事件</font>
+**<font color='#2196F3' size=3>刷新最近会话</font>**
 ```java
  LiMaoIM.getInstance().getLiMConversationManager().addOnRefreshMsg(new IRefreshConversationMsg() {
             @Override
@@ -53,7 +53,7 @@ LiMaoIM.getInstance().getLiMConversationManager().clearAll();
             }
         });
 ```
-**<font color='#2196F3'>删除最近会话</font>**
+**<font color='#2196F3' size=3>删除最近会话</font>**
 ```java
  LiMaoIM.getInstance().getLiMConversationManager().addOnDeleteMsgListener(new IDeleteConversationMsg() {
             @Override

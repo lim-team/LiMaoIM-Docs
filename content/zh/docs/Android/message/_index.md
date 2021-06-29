@@ -6,7 +6,7 @@ weight: 1033
 ---
 在注册并连接IM成功后，我们就可以收发消息了。
 
-**<font color='#2196F3'>发送消息</font>**
+**<font color='#2196F3' size=3>发送消息</font>**
 ```java
 LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMBaseContentMsgModel, channelID, channelType);
 ```
@@ -28,7 +28,7 @@ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMMsg);
 * `red_dot`设置为`false`接收方收到消息不会显示红点。
 
 
-**<font color='#2196F3'>新消息监听</font>**
+**<font color='#2196F3' size=3>新消息监听</font>**
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().addOnNewMsgListener("listener_key", new INewMsgListener() {
             @Override

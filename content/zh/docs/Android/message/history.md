@@ -5,7 +5,7 @@ date: 2020-02-06
 weight: 1050
 ---
 
-**<font color='#2196F3'>查询指定频道的历史消息记录</font>**
+**<font color='#2196F3' size=3>查询指定频道的历史消息记录</font>**
 
 ```java
 LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, channelType, oldestOrderSeq, contain, dropDown, pageSize, new IGetOrSyncHistoryMsgBack() {
@@ -26,4 +26,4 @@ LiMaoIM.getInstance().getLiMMsgManager().getOrSyncHistoryMessages(channelId, cha
 | dropDown        | boolean | true：下拉false：上拉                             |
 | pageSize        | int     | 查询消息数量                                      |
 
-><font color='#999' size=2>注：如果本地没有消息记录或者消息存在不连续问题，这时需从网络获取消息记录再返回到UI。这时UI需监听获取channel的历史消息具体查看[离线消息](/content/zh/docs/Android/message/offline_msg.md)对接</font>
+><font color='#999' size=2>注：如果本地没有消息记录或者消息存在不连续问题，这时需从网络获取消息记录再返回到UI。这时UI需监听获取channel的历史消息具体查看[离线消息](/docs/android/message/offline_msg/)对接</font>
