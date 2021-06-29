@@ -30,7 +30,7 @@ LiMaoIM.getInstance().getLiMMsgManager().addSendMsgAckListener("listener_key", n
 * `clientSeq` 客户端序列号，可通过该字段判断本地消息唯一性
 * `messageID` 服务器消息ID
 * `messageSeq` 服务器序列号
-* `reasonCode` 消息状态码。发送消息返回状态说明请查看状态码中的[发送消息返回状态码](./../status.md)
+* `reasonCode` 消息状态码。发送消息返回状态说明请查看状态码中的[发送消息返回状态码](/docs/android/status/)
 
 ><font size=2 color='#999'>注：该监听是指某条消息的发送结果状态，可通过该监听刷新发送消息状态等。</font>
 

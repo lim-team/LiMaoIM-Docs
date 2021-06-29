@@ -23,7 +23,7 @@ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMBaseContentMsgMod
 ```java
 LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(liMMsg);
 ```
-关于`LiMMsg`相关字段说明
+关于`LiMMsg`部分字段说明
 * `no_persist`字段设置为`true`，标识本条消息发送方和接收方都不会存储。
 * `red_dot`设置为`false`接收方收到消息不会显示红点。
 
