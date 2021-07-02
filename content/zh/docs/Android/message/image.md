@@ -14,6 +14,6 @@ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(imgMsgModel, channel
 ```
 
 参数说明:
-参数 | 类型 | 说明
----|--- |---
-localPath | String | 图片本地地址
+| 参数      | 类型   | 说明         |
+| --------- | ------ | ------------ |
+| localPath | String | 图片本地地址 |

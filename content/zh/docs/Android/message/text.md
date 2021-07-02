@@ -14,6 +14,6 @@ LiMaoIM.getInstance().getLiMConnectionManager().sendMessage(textMsgModel, channe
 ```
 
 参数说明:
-参数 | 类型 | 说明
----|--- |---
-content | string | 文本内容
+| 参数    | 类型   | 说明     |
+| ------- | ------ | -------- |
+| content | string | 文本内容 |

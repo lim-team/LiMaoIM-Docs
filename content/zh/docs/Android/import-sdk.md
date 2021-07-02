@@ -11,15 +11,14 @@ weight: 99
 ```
 allprojects {
     repositories {
-        maven { url 'https://dl.bintray.com/limaoim/maven' }
-        ....
+        ...
+        maven { url 'https://jitpack.io' }
     }
 }
 ```
 然后在app model中导入
 ```
-implementation 'com.limao.im.limaoimlib:LiMaoImLib:1.1.2'
-...
+implementation 'com.github.lim-team:LiMaoIMAndroidSDK:1.0.0'
 ```
 
 ## 引入UI相关模块
